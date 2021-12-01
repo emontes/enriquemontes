@@ -7,12 +7,13 @@
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: `WebDev Portfolio`,
-    description: `Awesome protfolio site built with Gatsby and Strapi`,
-    titleTemplate: `%s | WebDev Portfolio`,
-    url: `https://ade-portfolio2021.netlify.app/`,
+    title: `Programador Front-End`,
+    description: `Desarrollo sistemas web utilizando Frameworks como Gastby y React para el Front,
+    y para el Back uso Headless CMS como Strapi, Contentful o Wordpress`,
+    titleTemplate: `%s | Enrique Montes`,
+    url: `https://enriquemontes.com/`,
     twitterUsername: `@el_ade`,
-    image: `/mainimg.png`,
+    image: `/desarrollador-web.jpg`,
   },
   plugins: [
     `gatsby-plugin-image`,
@@ -31,9 +32,23 @@ module.exports = {
       options: {
         apiURL: `http://localhost:1337`,
         queryLimit: 1000, // Defaults to 100
-        collectionTypes: [`job`, `project`],
-        singleTypes: [`about`],
+        collectionTypes: [
+          {
+            name: `job`,
+            api: { qs: { _locale: `all` } },
+          },
+          {
+            name: `project`,
+            api: { qs: { _locale: `all` } },
+          },
+        ],
+        singleTypes: [
+          {
+            name: `about`,
+            api: { qs: { _locale: `all` } },
+          },
+        ],
       },
     },
   ],
-}
+};
