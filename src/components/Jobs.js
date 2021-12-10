@@ -44,21 +44,17 @@ const Jobs = () => {
         {/* btn container */}
         <div className="btn-container">
           {jobs.map((item, index) => {
-            {
-              if (item.locale == language) {
-                return (
-                  <button
-                    key={index}
-                    className={
-                      index === value ? "job-btn active-btn" : "job-btn"
-                    }
-                    onClick={() => setValue(index)}
-                  >
-                    {item.company}
-                  </button>
-                );
-              }
-            }
+            if (item.locale === language) {
+              return (
+                <button
+                  key={index}
+                  className={index === value ? "job-btn active-btn" : "job-btn"}
+                  onClick={() => setValue(index)}
+                >
+                  {item.company}
+                </button>
+              );
+            } else return null;
           })}
         </div>
         {/* job info */}

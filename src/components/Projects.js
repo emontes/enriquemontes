@@ -1,7 +1,7 @@
 import React from "react";
 import Title from "./Title";
 import Project from "./Project";
-import { Link, Trans, useTranslation } from "gatsby-plugin-react-i18next";
+import { Link, Trans } from "gatsby-plugin-react-i18next";
 
 const Projects = ({ projects, title, showLink }) => {
   return (

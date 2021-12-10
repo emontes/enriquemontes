@@ -1,15 +1,18 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Title from "../components/Title"
-import Seo from "../components/Seo"
+import React from "react";
+import { graphql } from "gatsby";
+import Title from "../components/Title";
+import Seo from "../components/Seo";
+import { useTranslation } from "gatsby-plugin-react-i18next";
+import Layout from "../components/Layout";
 
 const About = ({ data }) => {
   const {
     strapiAbout: { title, image, info, stack },
-  } = data
+  } = data;
+  const { t } = useTranslation();
   return (
-    <>
-      <Seo title="About" />
+    <Layout>
+      <Seo title={t("About")} />
       <section className="about-page">
         <div className="section-center about-center">
           <img
@@ -21,20 +24,30 @@ const About = ({ data }) => {
             <Title title={title} />
             <p>{info}</p>
             <div className="about-stack">
-              {stack.map(item => {
-                return <span key={item.id}>{item.title}</span>
+              {stack.map((item) => {
+                return <span key={item.id}>{item.title}</span>;
               })}
             </div>
           </article>
         </div>
       </section>
-    </>
-  )
-}
+    </Layout>
+  );
+};
 
 export const query = graphql`
-  {
-    strapiAbout {
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+
+    strapiAbout(locale: { eq: $language }) {
       title
       info
       stack {
@@ -48,6 +61,6 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
-export default About
+export default About;

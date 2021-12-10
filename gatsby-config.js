@@ -67,7 +67,7 @@ module.exports = {
       resolve: `gatsby-source-strapi`,
       options: {
         apiURL: `http://localhost:1337`,
-        queryLimit: 1000, // Defaults to 100
+        queryLimit: 100, // Defaults to 100
         collectionTypes: [
           {
             name: `job`,
@@ -80,8 +80,28 @@ module.exports = {
         ],
         singleTypes: [
           {
-            name: `about`,
-            api: { qs: { _locale: `all` } },
+            name: "about",
+            api: {
+              qs: {
+                _locale: `en`,
+              },
+            },
+          },
+          {
+            name: "about",
+            api: {
+              qs: {
+                _locale: `es`,
+              },
+            },
+          },
+          {
+            name: "about",
+            api: {
+              qs: {
+                _locale: `de`,
+              },
+            },
           },
         ],
       },
