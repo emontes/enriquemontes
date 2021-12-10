@@ -1,8 +1,9 @@
-import React from "react"
-import logo from "../assets/images/logo.svg"
-import { FaAlignRight } from "react-icons/fa"
-import pageLinks from "../constants/links"
-import { Link } from "gatsby"
+import React from "react";
+import logo from "../assets/images/logo.svg";
+import { FaAlignRight } from "react-icons/fa";
+import pageLinks from "../constants/links";
+import { Link } from "gatsby";
+import Language from "./Language";
 const Navbar = ({ toggleSidebar }) => {
   return (
     <nav className="navbar">
@@ -14,17 +15,18 @@ const Navbar = ({ toggleSidebar }) => {
           </button>
         </div>
         <div className="nav-links">
-          {pageLinks.map(link => {
+          {pageLinks.map((link) => {
             return (
               <Link key={link.id} to={link.url}>
                 {link.text}
               </Link>
-            )
+            );
           })}
         </div>
+        <Language />
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

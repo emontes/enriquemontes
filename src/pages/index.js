@@ -1,30 +1,47 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Hero from "../components/Hero"
-import Services from "../components/Services"
-import Jobs from "../components/Jobs"
-import Projects from "../components/Projects"
-import Seo from "../components/Seo"
+import React from "react";
+import { graphql } from "gatsby";
+import Hero from "../components/Hero";
+import Services from "../components/Services";
+import Jobs from "../components/Jobs";
+import Projects from "../components/Projects";
+import Seo from "../components/Seo";
+import { useTranslation } from "gatsby-plugin-react-i18next";
+import Layout from "../components/Layout";
+
 const IndexPage = ({ data }) => {
   const {
     allStrapiProject: { nodes: projects },
-  } = data
+  } = data;
+  const { t } = useTranslation();
   return (
-    <>
-      <Seo title="home" />
+    <Layout>
+      <Seo title={t("Home")} />
       <main>
         <Hero />
         <Services />
         <Jobs />
-        <Projects title="featured projects" showLink projects={projects} />
+        <Projects title={t("featured projects")} showLink projects={projects} />
       </main>
-    </>
-  )
-}
+    </Layout>
+  );
+};
 
 export const query = graphql`
-  {
-    allStrapiProject(filter: { featured: { eq: true } }, limit: 3) {
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+
+    allStrapiProject(
+      filter: { featured: { eq: true }, locale: { eq: $language } }
+      limit: 3
+    ) {
       nodes {
         description
         featured
@@ -47,6 +64,6 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
-export default IndexPage
+export default IndexPage;
