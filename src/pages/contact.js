@@ -1,8 +1,9 @@
-import React from "react"
-import Seo from "../components/Seo"
+import React from "react";
+import Seo from "../components/Seo";
+import Layout from "../components/Layout";
 const contact = () => {
   return (
-    <>
+    <Layout>
       <Seo title="Contact" />
       <section className="contact-page">
         <article className="contact-form">
@@ -34,8 +35,8 @@ const contact = () => {
           </form>
         </article>
       </section>
-    </>
-  )
-}
+    </Layout>
+  );
+};
 
-export default contact
+export default contact;

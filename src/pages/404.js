@@ -1,10 +1,11 @@
-import React from "react"
-import { Link } from "gatsby"
-import Seo from "../components/Seo"
+import React from "react";
+import { Link } from "gatsby";
+import Seo from "../components/Seo";
+import Layout from "../components/Layout";
 
 const Error = () => {
   return (
-    <>
+    <Layout>
       <Seo title="404" />
       <main className="error-page">
         <div className="error-container">
@@ -14,8 +15,8 @@ const Error = () => {
           </Link>
         </div>
       </main>
-    </>
-  )
-}
+    </Layout>
+  );
+};
 
-export default Error
+export default Error;

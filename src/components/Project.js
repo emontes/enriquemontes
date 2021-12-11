@@ -1,7 +1,7 @@
-import React from "react"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { FaGithubSquare, FaShareSquare } from "react-icons/fa"
-import { Link } from "gatsby"
+import React from "react";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { FaGithubSquare, FaShareSquare } from "react-icons/fa";
+import { Link } from "gatsby-plugin-react-i18next";
 
 const Project = ({
   description,
@@ -27,8 +27,8 @@ const Project = ({
         </Link>
         <p className="project-desc">{description}</p>
         <div className="project-stack">
-          {stack.map(item => {
-            return <span key={item.index}>{item.title}</span>
+          {stack.map((item) => {
+            return <span key={item.index}>{item.title}</span>;
           })}
         </div>
         <div className="project-links">
@@ -44,7 +44,7 @@ const Project = ({
         </div>
       </div>
     </article>
-  )
-}
+  );
+};
 
-export default Project
+export default Project;

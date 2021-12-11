@@ -10,7 +10,7 @@ const languageName = {
 };
 
 const Language = () => {
-  const { language, languages, changeLanguage } = useI18next();
+  const { language, languages, originalPath, changeLanguage } = useI18next();
   return (
     <div
       style={{
@@ -21,11 +21,8 @@ const Language = () => {
       {languages.map((lng) => (
         <Link
           key={lng}
-          href="#"
-          onClick={(e) => {
-            e.preventDefault();
-            changeLanguage(lng);
-          }}
+          to={originalPath}
+          language={lng}
           style={{
             color:
               lng === language ? `var(--clr-primary-5)` : `var(--clr-grey-1`,
