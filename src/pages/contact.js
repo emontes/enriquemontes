@@ -1,13 +1,19 @@
 import React from "react";
+import { graphql } from "gatsby";
 import Seo from "../components/Seo";
 import Layout from "../components/Layout";
-const contact = () => {
+import { useTranslation, Trans } from "gatsby-plugin-react-i18next";
+
+const Contact = ({ data }) => {
+  const { t } = useTranslation();
   return (
     <Layout>
-      <Seo title="Contact" />
+      <Seo title={t("Contact")} />
       <section className="contact-page">
         <article className="contact-form">
-          <h3>get in touch</h3>
+          <h3>
+            <Trans>contact me</Trans>
+          </h3>
           <form>
             <div className="form-group">
               <input
@@ -39,4 +45,16 @@ const contact = () => {
   );
 };
 
-export default contact;
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      nodes {
+        ns
+        data
+        language
+      }
+    }
+  }
+`;
+
+export default Contact;

@@ -19,6 +19,7 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -37,7 +38,7 @@ module.exports = {
       resolve: `gatsby-plugin-react-i18next`,
       options: {
         localeJsonSourceName: `locale`, // name given to `gatsby-source-filesystem` plugin.
-        languages: [`en`, `es`, `de`],
+        languages: [`en`, `es`, `he`, `ru`, `de`],
         defaultLanguage: `en`,
         // if you are using Helmet, you must include siteUrl, and make sure you add http:https
         siteUrl: `https://example.com/`,
@@ -100,6 +101,22 @@ module.exports = {
             api: {
               qs: {
                 _locale: `de`,
+              },
+            },
+          },
+          {
+            name: "about",
+            api: {
+              qs: {
+                _locale: `he`,
+              },
+            },
+          },
+          {
+            name: "about",
+            api: {
+              qs: {
+                _locale: `ru`,
               },
             },
           },

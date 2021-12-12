@@ -12,7 +12,7 @@ import {
 
 const query = graphql`
   query {
-    allStrapiJob(sort: { fields: created_at, order: DESC }) {
+    allStrapiJob(sort: { fields: date, order: DESC }) {
       nodes {
         position
         company
@@ -36,7 +36,7 @@ const Jobs = () => {
   const { company, position, date, desc } = jobs[value];
   const { t } = useTranslation();
   const { language } = useI18next();
-
+  console.log("-----> strapiJobs", jobs);
   return (
     <section className="section jobs">
       <Title title={t("Experience")} />

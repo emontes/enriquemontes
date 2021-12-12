@@ -1,4 +1,13 @@
-# Gatsby-Strapi Portfolio Starter
+# Portfolio for Enrique Montes
+
+Working at https://enriquemontes.com
+
+It uses strapi as headles cms so you need to first start strapi:
+
+```
+cd portfolio-strapi
+npm start develop
+```
 
 ## Setup Notes
 

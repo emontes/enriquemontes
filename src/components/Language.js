@@ -1,5 +1,11 @@
 import React from "react";
 import { Link, useI18next } from "gatsby-plugin-react-i18next";
+import styled from "styled-components";
+import esFlag from "../assets/images/flags/mx.svg";
+import usFlag from "../assets/images/flags/us.svg";
+import ruFlag from "../assets/images/flags/ru.svg";
+import heFlag from "../assets/images/flags/il.svg";
+import deFlag from "../assets/images/flags/de.svg";
 
 const languageName = {
   es: "Español",
@@ -8,34 +14,99 @@ const languageName = {
   he: "עברית",
   de: "Deutsch",
 };
+const languageFlag = {
+  es: esFlag,
+  en: usFlag,
+  ru: ruFlag,
+  he: heFlag,
+  de: deFlag,
+};
 
 const Language = () => {
   const { language, languages, originalPath, changeLanguage } = useI18next();
   return (
-    <div
-      style={{
-        textAlign: "right",
-        padding: "0.5rem",
-      }}
-    >
-      {languages.map((lng) => (
-        <Link
-          key={lng}
-          to={originalPath}
-          language={lng}
-          style={{
-            color:
-              lng === language ? `var(--clr-primary-5)` : `var(--clr-grey-1`,
-            margin: 10,
-            textDecoration: `underline`,
-            cursor: `pointer`,
-          }}
-        >
-          {languageName[lng]}
-        </Link>
-      ))}
-    </div>
+    <Wrapper>
+      <div className="current-language">
+        <img
+          src={languageFlag[language]}
+          alt={languageName[language]}
+          style={{ height: "22px" }}
+        />
+
+        {languageName[language]}
+      </div>
+      <ul>
+        {languages.map((lng) => {
+          if (lng !== language) {
+            return (
+              <li>
+                <Link
+                  key={lng}
+                  to={originalPath}
+                  language={lng}
+                  className={`link ${lng === language ? "selected" : ""}`}
+                >
+                  <img
+                    src={languageFlag[lng]}
+                    alt={languageName[lng]}
+                    style={{ height: "22px" }}
+                  />
+                  {languageName[lng]}
+                </Link>
+              </li>
+            );
+          }
+        })}
+      </ul>
+    </Wrapper>
   );
 };
 
 export default Language;
+
+const Wrapper = styled.div`
+  margin-left: 3rem;
+
+  &:hover {
+    cursor: pointer;
+    ul {
+      display: block;
+    }
+  }
+  .current-language {
+    border: 1px solid var(--clr-grey-9);
+    border-radius: var(--radius);
+    color: var(--clr-grey-5);
+    padding: 5px 10px;
+    width: 7rem;
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+  }
+
+  ul {
+    display: none;
+    padding: 0.8rem;
+    transition: var(--transition);
+    margin-top: 3rem;
+
+    background-color: var(--clr-white);
+    border: 1px solid var(--clr-grey-9);
+    border-radius: var(--radius);
+    box-shadow: var(--light-shadow);
+  }
+
+  .link {
+    margin: 5px;
+
+    cursor: pointer;
+
+    color: var(--clr-grey-1);
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+  }
+  .selected {
+    color: var(--clr-primary-5);
+  }
+`;
