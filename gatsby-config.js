@@ -70,6 +70,12 @@ module.exports = {
         apiURL: `http://localhost:1337`,
         queryLimit: 100, // Defaults to 100
         collectionTypes: [
+          `recurso`,
+          {
+            name: `recurso-tipo`,
+            api: { qs: { _locale: `all` } },
+          },
+
           {
             name: `job`,
             api: { qs: { _locale: `all` } },

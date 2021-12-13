@@ -22,8 +22,18 @@ const ProjectTemplate = ({ pageContext: { slug, title }, data }) => {
 };
 
 export const query = graphql`
-  query getSingleProject($slug: String) {
-    strapiProject(slug: { eq: $slug }) {
+  query getSingleProject($slug: String, $language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+
+    strapiProject(slug: { eq: $slug }, locale: { eq: $language }) {
       description
       title
       image {

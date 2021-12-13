@@ -48,10 +48,12 @@ const Contact = ({ data }) => {
 export const query = graphql`
   query ($language: String!) {
     locales: allLocale(filter: { language: { eq: $language } }) {
-      nodes {
-        ns
-        data
-        language
+      edges {
+        node {
+          ns
+          data
+          language
+        }
       }
     }
   }

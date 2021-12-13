@@ -5,7 +5,10 @@ import { FaAlignRight } from "react-icons/fa";
 import pageLinks from "../constants/links";
 import { Link } from "gatsby";
 import Language from "./Language";
+import { useTranslation } from "gatsby-plugin-react-i18next";
+
 const Navbar = ({ toggleSidebar }) => {
+  const { t } = useTranslation();
   return (
     <Wrapper>
       <div className="nav-center">
@@ -21,7 +24,7 @@ const Navbar = ({ toggleSidebar }) => {
           {pageLinks.map((link) => {
             return (
               <Link key={link.id} to={link.url}>
-                {link.text}
+                {t(link.text)}
               </Link>
             );
           })}

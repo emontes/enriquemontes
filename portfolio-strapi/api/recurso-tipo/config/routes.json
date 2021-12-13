@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/recurso-tipos",
+      "handler": "recurso-tipo.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/recurso-tipos/count",
+      "handler": "recurso-tipo.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/recurso-tipos/:id",
+      "handler": "recurso-tipo.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/recurso-tipos",
+      "handler": "recurso-tipo.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/recurso-tipos/:id",
+      "handler": "recurso-tipo.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/recurso-tipos/:id",
+      "handler": "recurso-tipo.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

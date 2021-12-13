@@ -24,10 +24,6 @@
         }
       }
     },
-    "slug": {
-      "type": "uid",
-      "targetField": "title"
-    },
     "description": {
       "type": "text",
       "pluginOptions": {
@@ -86,6 +82,15 @@
           "localized": false
         }
       }
+    },
+    "slug": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "string",
+      "required": true
     }
   }
 }
