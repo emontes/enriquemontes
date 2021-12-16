@@ -9,6 +9,8 @@ cd portfolio-strapi
 npm start develop
 ```
 
+Esta alojado en Netlify con la cuenta de enriqueadelino
+
 ## Setup Notes
 
 1. Used Hello World Starter (all packages included)

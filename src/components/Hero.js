@@ -14,6 +14,9 @@ const Hero = () => {
             <h1>
               <Trans>i'm enrique</Trans>
             </h1>
+            <h3>
+              <Trans>Programmer in Cancun</Trans>
+            </h3>
             <h4>
               <Trans>Front-end developer</Trans>
             </h4>

@@ -4,13 +4,13 @@ import { FaGithubSquare, FaShareSquare } from "react-icons/fa";
 import { Link } from "gatsby-plugin-react-i18next";
 
 const Project = ({
+  created,
   description,
   title,
   github,
   stack,
   url,
   image,
-  index,
   slug,
 }) => {
   return (
@@ -21,7 +21,7 @@ const Project = ({
         alt={title}
       />
       <div className="project-info">
-        <span className="project-number">{index + 1}</span>
+        <span className="project-number">{created}</span>
         <Link to={`/projects/${slug}`} className="project-slug">
           <h3>{title}</h3>
         </Link>

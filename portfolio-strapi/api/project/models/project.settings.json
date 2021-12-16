@@ -62,7 +62,9 @@
         "i18n": {
           "localized": false
         }
-      }
+      },
+      "required": true,
+      "unique": false
     },
     "featured": {
       "type": "boolean",
@@ -91,6 +93,26 @@
       },
       "type": "string",
       "required": true
+    },
+    "created": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "date",
+      "required": true
+    },
+    "recursos": {
+      "collection": "recurso"
+    },
+    "notas_internas": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "text"
     }
   }
 }

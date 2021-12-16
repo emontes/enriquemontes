@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Projects from "../components/Projects";
+
+import Projects from "../components/Developments";
 import Seo from "../components/Seo";
 import Layout from "../components/Layout";
 import { useTranslation } from "gatsby-plugin-react-i18next";
@@ -13,10 +14,17 @@ const ProjectsPage = ({
   const { t } = useTranslation();
   return (
     <Layout>
-      <Seo title={t("Projects")} />
+      <Seo
+        title={t("Developed Web Systems")}
+        description={t("Developed Web Systems Description")}
+      />
       <main>
-        <section className="projects-page">
-          <Projects title={t("all projects")} projects={projects} />
+        <section className="developments-page">
+          <Projects
+            title={t("Developed Web Systems")}
+            projects={projects}
+            allProjects
+          />
         </section>
       </main>
     </Layout>
@@ -37,8 +45,12 @@ export const query = graphql`
       }
     }
 
-    allStrapiProject(filter: { locale: { eq: $language } }) {
+    allStrapiProject(
+      filter: { locale: { eq: $language } }
+      sort: { fields: created, order: DESC }
+    ) {
       nodes {
+        created(formatString: "MMM yyyy")
         description
         featured
         github
@@ -46,14 +58,21 @@ export const query = graphql`
         slug
         title
         url
-        stack {
-          id
-          title
-        }
         image {
           localFile {
             childImageSharp {
               gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
+            }
+          }
+        }
+        recursos {
+          id
+          title
+          image {
+            localFile {
+              childImageSharp {
+                gatsbyImageData(placeholder: BLURRED, layout: FIXED, width: 60)
+              }
             }
           }
         }

@@ -1,9 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "recurso_tipos",
+  "collectionName": "medios",
   "info": {
-    "name": "Recurso Tipo",
-    "description": ""
+    "name": "medio"
   },
   "options": {
     "increments": true,
@@ -16,31 +15,38 @@
     }
   },
   "attributes": {
-    "title": {
+    "titulo": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "string"
+      "type": "string",
+      "required": true
     },
-    "url": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "string"
-    },
-    "slug": {
+    "archivo": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": true,
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
+      }
+    },
+    "description": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
       },
-      "type": "string",
-      "required": true,
-      "unique": false
+      "type": "string"
     }
   }
 }

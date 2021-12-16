@@ -7,7 +7,7 @@
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: `Programador Front-End`,
+    title: `Programador en Cancún`,
     description: `Desarrollo sistemas web utilizando Frameworks como Gastby y React para el Front,
     y para el Back uso Headless CMS como Strapi, Contentful o Wordpress`,
     titleTemplate: `%s | Enrique Montes`,
