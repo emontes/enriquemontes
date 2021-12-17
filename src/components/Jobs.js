@@ -1,60 +1,33 @@
 import React from "react";
 import Title from "./Title";
 import { FaAngleDoubleRight } from "react-icons/fa";
-import { graphql, useStaticQuery } from "gatsby";
+import { Link, Trans, useTranslation } from "gatsby-plugin-react-i18next";
+import styled from "styled-components";
 
-import {
-  Link,
-  Trans,
-  useTranslation,
-  useI18next,
-} from "gatsby-plugin-react-i18next";
-
-const query = graphql`
-  query {
-    allStrapiJob(sort: { fields: date, order: DESC }) {
-      nodes {
-        position
-        company
-        date
-        locale
-        desc {
-          id
-          name
-        }
-      }
-    }
-  }
-`;
-
-const Jobs = () => {
-  const data = useStaticQuery(query);
-  const {
-    allStrapiJob: { nodes: jobs },
-  } = data;
+const Jobs = ({ jobs, showLink }) => {
   const [value, setValue] = React.useState(0);
   const { company, position, date, desc } = jobs[value];
   const { t } = useTranslation();
-  const { language } = useI18next();
-  console.log("-----> strapiJobs", jobs);
+  const jobBtn = "job-btn";
+
   return (
-    <section className="section jobs">
+    <Wrapper className="section">
       <Title title={t("Experience")} />
-      <div className="jobs-center">
+      <div className={showLink ? "jobs-center" : "jobs-center-all"}>
         {/* btn container */}
-        <div className="btn-container">
+        <div className={showLink ? "btn-container" : "btn-container-all"}>
           {jobs.map((item, index) => {
-            if (item.locale === language) {
-              return (
-                <button
-                  key={index}
-                  className={index === value ? "job-btn active-btn" : "job-btn"}
-                  onClick={() => setValue(index)}
-                >
-                  {item.company}
-                </button>
-              );
-            } else return null;
+            return (
+              <button
+                key={index}
+                className={
+                  index === value ? "job-btn active-btn" : "job-btn small-font"
+                }
+                onClick={() => setValue(index)}
+              >
+                {item.company}
+              </button>
+            );
           })}
         </div>
         {/* job info */}
@@ -72,12 +45,123 @@ const Jobs = () => {
           })}
         </article>
       </div>
-
-      <Link to="/about" className="btn center-btn">
-        <Trans>more info</Trans>
-      </Link>
-    </section>
+      {showLink && (
+        <Link to="/about" className="btn center-btn">
+          <Trans>more info</Trans>
+        </Link>
+      )}
+    </Wrapper>
   );
 };
 
 export default Jobs;
+
+const Wrapper = styled.section`
+  .jobs-center {
+    width: 80vw;
+    margin: 0 auto;
+    max-width: var(--max-width);
+  }
+  .jobs-center-all {
+    width: 80vw;
+    margin: 0 auto;
+    max-width: var(--max-width);
+  }
+  .btn-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 4rem;
+  }
+  .btn-container-all {
+    display: flex;
+
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-bottom: 4rem;
+  }
+  .job-btn {
+    background: transparent;
+    border-color: transparent;
+
+    text-transform: capitalize;
+    font-size: 1.25rem;
+    letter-spacing: var(--spacing);
+    margin: 0.5rem;
+    transition: var(--transition);
+    cursor: pointer;
+
+    line-height: 1;
+    padding: 0.375rem 0.75rem;
+    border-radius: var(--radius);
+    box-shadow: var(--light-shadow);
+  }
+  .small-font {
+    font-size: 0.8rem;
+  }
+  .job-btn:hover {
+    color: var(--clr-primary-5);
+    box-shadow: 0 2px var(--clr-primary-5);
+  }
+  .active-btn {
+    color: var(--clr-primary-5);
+    box-shadow: 0 2px var(--clr-primary-5);
+  }
+  .job-info {
+    min-height: 320px;
+  }
+  .job-info h3 {
+    font-weight: 400;
+  }
+  .job-info h4 {
+    text-transform: uppercase;
+    color: var(--clr-grey-5);
+    background: var(--clr-grey-9);
+    display: inline-block;
+    padding: 0.375rem 0.75rem;
+    border-radius: var(--radius);
+  }
+  .job-date {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+  }
+  .job-desc {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 2rem;
+    align-items: center;
+    margin-bottom: 1.25rem;
+  }
+  .job-desc p {
+    margin-bottom: 0;
+    color: var(--clr-grey-3);
+  }
+  .job-icon {
+    color: var(--clr-primary-5);
+  }
+  @media screen and (min-width: 992px) {
+    .jobs-center {
+      width: 90vw;
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      column-gap: 4rem;
+    }
+    .btn-container {
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .active-btn {
+      box-shadow: -2px 0 var(--clr-primary-5);
+    }
+    .job-btn:hover {
+      box-shadow: -2px 0 var(--clr-primary-5);
+    }
+    .job-date {
+      font-size: 1rem;
+      letter-spacing: var(--spacing);
+    }
+  }
+`;

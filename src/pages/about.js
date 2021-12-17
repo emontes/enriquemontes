@@ -4,6 +4,7 @@ import Title from "../components/Title";
 import Seo from "../components/Seo";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 import Layout from "../components/Layout";
+import Jobs from "../components/Jobs";
 
 const About = ({ data }) => {
   const {
@@ -31,6 +32,7 @@ const About = ({ data }) => {
           </article>
         </div>
       </section>
+      <Jobs jobs={data.allStrapiJob.nodes} />
     </Layout>
   );
 };
@@ -57,6 +59,22 @@ export const query = graphql`
       image {
         localFile {
           publicURL
+        }
+      }
+    }
+
+    allStrapiJob(
+      sort: { fields: date, order: DESC }
+      filter: { locale: { eq: $language } }
+    ) {
+      nodes {
+        position
+        company
+        date
+        locale
+        desc {
+          id
+          name
         }
       }
     }

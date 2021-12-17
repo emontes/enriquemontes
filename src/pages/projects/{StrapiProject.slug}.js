@@ -3,7 +3,11 @@ import { graphql } from "gatsby";
 import Seo from "../../components/Seo";
 import Layout from "../../components/Layout";
 
-const ProjectTemplate = ({ pageContext: { slug, title }, data }) => {
+const ProjectTemplate = ({ pageContext: { title }, data }) => {
+  if (!data.strapiProject) {
+    console.log("----> No hay data.strapiProject");
+    return null;
+  }
   return (
     <Layout>
       <Seo

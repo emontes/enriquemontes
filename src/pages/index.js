@@ -14,6 +14,7 @@ const IndexPage = ({ data }) => {
     allStrapiProject: { nodes: projects },
   } = data;
   const { t } = useTranslation();
+  console.log("---> Data", data);
   return (
     <Layout>
       <Seo
@@ -23,7 +24,7 @@ const IndexPage = ({ data }) => {
       <main>
         <Hero />
         <Services />
-        <Jobs />
+        <Jobs jobs={data.allStrapiJob.nodes} showLink />
         <Resources recursos={data.recursos.nodes} showLink />
         <Developments
           title={t("featured projects")}
@@ -43,6 +44,23 @@ export const query = graphql`
           ns
           data
           language
+        }
+      }
+    }
+
+    allStrapiJob(
+      sort: { fields: date, order: DESC }
+      filter: { locale: { eq: $language } }
+      limit: 5
+    ) {
+      nodes {
+        position
+        company
+        date
+        locale
+        desc {
+          id
+          name
         }
       }
     }

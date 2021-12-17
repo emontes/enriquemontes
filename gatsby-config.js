@@ -41,7 +41,7 @@ module.exports = {
         languages: [`en`, `es`, `he`, `ru`, `de`],
         defaultLanguage: `en`,
         // if you are using Helmet, you must include siteUrl, and make sure you add http:https
-        siteUrl: `https://example.com/`,
+        siteUrl: `https://enriquemontes.com/`,
         // you can pass any i18next options
         i18nextOptions: {
           interpolation: {
@@ -57,7 +57,7 @@ module.exports = {
       resolve: `gatsby-source-strapi`,
       options: {
         apiURL: `http://localhost:1337`,
-        queryLimit: 100, // Defaults to 100
+        queryLimit: 5000, // Defaults to 100
         collectionTypes: [
           `recurso`,
           `recurso-tipo`,

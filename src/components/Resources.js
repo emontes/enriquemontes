@@ -7,7 +7,6 @@ import Resource from "./Resource";
 const Resources = ({ recursos, showLink }) => {
   const { t } = useTranslation();
 
-  console.log("-----> recursos", recursos);
   return (
     <Wrapper className="section">
       <Title title={t("Technological resources that I use")} />
