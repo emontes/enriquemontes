@@ -47,7 +47,6 @@ export const query = graphql`
           title
           slug
           url
-          locale
         }
         image {
           localFile {

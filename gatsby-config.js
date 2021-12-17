@@ -50,17 +50,6 @@ module.exports = {
           keySeparator: false,
           nsSeparator: false,
         },
-        // pages: [
-        //   {
-        //     matchPath: "/:lang?/blog/:uid",
-        //     getLanguageFromPath: true,
-        //     excludeLanguages: ["es"],
-        //   },
-        //   {
-        //     matchPath: "/preview",
-        //     languages: ["en"],
-        //   },
-        // ],
       },
     },
     `gatsby-plugin-react-helmet`,
@@ -71,10 +60,7 @@ module.exports = {
         queryLimit: 100, // Defaults to 100
         collectionTypes: [
           `recurso`,
-          {
-            name: `recurso-tipo`,
-            api: { qs: { _locale: `all` } },
-          },
+          `recurso-tipo`,
 
           {
             name: `job`,
