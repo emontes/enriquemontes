@@ -13,15 +13,15 @@ Variables
 
 :root {
   /* dark shades of primary color*/
-  --clr-primary-1: #00255c;
+  --clr-primary-1: rgb(0, 37, 92);
   --clr-primary-2: #003e79;
-  --clr-primary-3: #005897;
-  --clr-primary-4: #0074b7;
+  --clr-primary-3: rgb(0, 89, 153);
+  --clr-primary-4: hsl(202, 100%, 36%);
   --clr-primary-5: #2892d7;
   /* lighter shades of primary color */
   --clr-primary-6: #6d94bc;
   --clr-primary-7: #00cbd2;
-  --clr-primary-8: #c7e2de;
+  --clr-primary-8: rgb(199, 226, 222);
   --clr-primary-9: #e6f4f1;
   --clr-primary-10: #eefbff;
   /* darkest grey - used for headings */
@@ -146,6 +146,12 @@ p {
   color: var(--clr-primary-1);
   background: var(--clr-primary-8);
 }
+
+.btn--animated {
+  animation: moveInBottom 0.5s ease-out 0.75s;
+  animation-fill-mode: backwards;
+}
+
 .center-btn {
   display: block;
   width: 12rem;
@@ -173,7 +179,7 @@ p {
   width: 5rem;
   height: 0.25rem;
   margin-bottom: 1.25rem;
-  background: var(--clr-primary-5);
+  background: var(--clr-primary-8);
   margin-left: auto;
   margin-right: auto;
 }
@@ -805,4 +811,62 @@ Contact Page
   border-bottom-right-radius: var(--radius);
   border-top-right-radius: 0;
   border-top-left-radius: 0;
+}
+
+/*
+==============
+Animation 
+==============
+*/
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    /* transform: translateX(-10rem) rotate(-60deg); */
+    transform: translateX(-10rem);
+  }
+
+  60% {
+    /* transform: rotate(120deg); */
+  }
+
+  80% {
+    transform: translateX(1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+
+  80% {
+    transform: translateX(-1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+
+  80% {
+    transform: translateY(-1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

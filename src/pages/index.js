@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Hero from "../components/Hero";
+import Hero from "../components/HeroHome";
 import Services from "../components/Services";
 import Jobs from "../components/Jobs";
 import Developments from "../components/Developments";

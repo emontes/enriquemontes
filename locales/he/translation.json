@@ -4,7 +4,9 @@
 	"Developed Web Systems Description": "פורטפוליו של מערכות שפותחו ב-Gatsby, React, Wordpress, Zend Framework, Php Nuke ו-PHP טהור.",
 	"Experience": "ניסיון",
 	"Front-end developer": "מפתח קצה",
+	"Front-end programmer": "מתכנת פרונט-אנד",
 	"Home": "בית",
+	"I know how to use the following technologies": "אני יודע איך להשתמש בטכנולוגיות הבאות",
 	"Programmer in Cancun": "מתכנת בקנקון",
 	"Projects": "פרויקטים",
 	"Resources I use": "משאבים שאני משתמש בהם",
@@ -13,7 +15,10 @@
 	"SEO text": "אופטימיזציה למנועי חיפוש",
 	"See more Resources": "ראה משאבים נוספים",
 	"See more web developments": "ראה פיתוחים נוספים באינטרנט",
+	"Technological resources": "משאבים טכנולוגיים",
 	"Technological resources that I use": "משאבים טכנולוגיים שאני משתמש בהם",
+	"That I have made or colaborated": "שהכנתי או שיתפתי פעולה",
+	"The Resources I Use (or have used)": "המשאבים שבהם אני משתמש (או שהשתמשתי בהם)",
 	"Web Servers": "שרתי אינטרנט",
 	"Web Servers text": "ניהול שרתי Linux, Apache, Ngnx או שרתי דואר",
 	"about": "על אודות",
@@ -28,6 +33,7 @@
 	"featured projects": "פרויקטים מומלצים",
 	"home": "בית",
 	"i'm enrique": "אני אנריקה",
+	"in cancun since": "בקנקון מאז 2002, תכנות מאז 1984",
 	"index-description": "אני מפתח מערכות אינטרנט באמצעות Frameworks כמו Gastby ו-React for the Front, ולחלק האחורי אני משתמש ב-headless CMS כמו Strapi, Contentful או Wordpress",
 	"more info": "עוד מידע",
 	"resources": "אֶמְצָעִי",
@@ -35,5 +41,5 @@
 	"ups, dead end": "עליות, מבוי סתום",
 	"view": "נוף",
 	"web development": "בניית אתרים",
-	"web development text": "פיתוח ממשקי אינטרנט מצד הקוד"
+	"web development text": "פיתוח מערכות אינטרנט באמצעות Gatsby.js בחזית. ולגב אני משתמש ב- Headless CMS כמו Strapi, Contentful או Wordpress"
 }

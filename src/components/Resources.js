@@ -9,7 +9,7 @@ const Resources = ({ recursos, showLink }) => {
 
   return (
     <Wrapper className="section">
-      <Title title={t("Technological resources that I use")} />
+      <Title title={t("I know how to use the following technologies")} />
       <div className="center">
         {recursos.map((item) => {
           return <Resource key={item.id} {...item} />;
@@ -20,6 +20,7 @@ const Resources = ({ recursos, showLink }) => {
           <Trans>See more Resources</Trans>
         </Link>
       )}
+      {!showLink && <Title title={t("Technological resources that I use")} />}
     </Wrapper>
   );
 };

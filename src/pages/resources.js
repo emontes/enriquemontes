@@ -4,6 +4,8 @@ import Seo from "../components/Seo";
 import Layout from "../components/Layout";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 import Resources from "../components/Resources";
+import Hero from "../components/Hero";
+import bcgImage from "../assets/images/projects-4.jpg";
 
 const ResourcesPage = ({ data }) => {
   const { t } = useTranslation();
@@ -12,6 +14,12 @@ const ResourcesPage = ({ data }) => {
       <Seo
         title={t("Technological resources that I use")}
         description={t("ResourcesDescription")}
+      />
+      <Hero
+        image={bcgImage}
+        main={t("Technological resources")}
+        sub={t("The Resources I Use (or have used)")}
+        btnLink="contact"
       />
       <main>
         <section className="developments-page">

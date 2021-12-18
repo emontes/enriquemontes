@@ -4,7 +4,9 @@
 	"Developed Web Systems Description": "Portfolio of systems developed in Gatsby, React, Wordpress, Zend Framework, Php Nuke and pure PHP.",
 	"Experience": "Experience",
 	"Front-end developer": "Front-End Developer",
+	"Front-end programmer": "Front-End Programmer",
 	"Home": "Home",
+	"I know how to use the following technologies": "I know how to use the following technologies",
 	"Programmer in Cancun": "Programmer in Cancun",
 	"Projects": "projects",
 	"Resources I use": "Resources I use",
@@ -13,7 +15,10 @@
 	"SEO text": "Search Engine Optimization",
 	"See more Resources": "See more Resources",
 	"See more web developments": "See more web developments",
+	"Technological resources": "Technological resources",
 	"Technological resources that I use": "Technological resources that I use",
+	"That I have made or colaborated": "That I have made or colaborated",
+	"The Resources I Use (or have used)": "The Resources I Use (or have used)",
 	"Web Servers": "Web Servers",
 	"Web Servers text": "Administration of Linux, Apache, Ngnx servers or mail servers",
 	"about": "about",
@@ -28,6 +33,7 @@
 	"featured projects": "featured projects",
 	"home": "home",
 	"i'm enrique": "i'm enrique",
+	"in cancun since": "in cancun since 2002, programming since 1984",
 	"index-description": "I develop web systems using Frameworks like Gastby and React for the Front, and for the Back I use Headless CMS like Strapi, Contentful or Wordpress",
 	"more info": "more info",
 	"resources": "resources",
@@ -35,5 +41,5 @@
 	"ups, dead end": "ups, dead end",
 	"view": "view",
 	"web development": "web development",
-	"web development text": "Developing web interfaces from the code side"
+	"web development text": "Web Systems Development using Gatsby.js on the Front. And for the Back I use Headless CMS like Strapi, Contentful or Wordpress"
 }

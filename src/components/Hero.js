@@ -1,48 +1,78 @@
 import React from "react";
-// import { Link } from "gatsby";
-import socialLinks from "../constants/social_links";
-import { StaticImage } from "gatsby-plugin-image";
-import { Link, Trans } from "gatsby-plugin-react-i18next";
+import BackImage from "../assets/images/pages/about.jpg";
+import styled from "styled-components";
+import { Trans, Link } from "gatsby-plugin-react-i18next";
 
-const Hero = () => {
+const AboutHeader = ({ image, main, sub, btnLink, btnText }) => {
   return (
-    <header className="hero">
-      <section className="section-center hero-center">
-        <article className="hero-info">
-          <div>
-            <div className="underline"></div>
-            <h1>
-              <Trans>i'm enrique</Trans>
-            </h1>
-            <h3>
-              <Trans>Programmer in Cancun</Trans>
-            </h3>
-            <h4>
-              <Trans>Front-end developer</Trans>
-            </h4>
-            <Link to="/contact" className="btn">
-              <Trans>contact me</Trans>
-            </Link>
-            <div className="social-links">
-              {socialLinks.map((link) => {
-                return (
-                  <a href={link.url} key={link.id} className="social-link">
-                    {link.icon}
-                  </a>
-                );
-              })}
-            </div>
-          </div>
-        </article>
-        <StaticImage
-          src="../assets/images/mainBcg.jpg"
-          alt="portfolio"
-          className="hero-img"
-          placeholder="blurred"
-        />
-      </section>
-    </header>
+    <Wrapper
+      style={{
+        backgroundImage: `linear-gradient(to right bottom, rgb(0, 89, 153,0.8), rgb(199, 226, 222,0.8)), url(${
+          image || BackImage
+        })`,
+      }}
+    >
+      <div class="header__text-box">
+        <h1 class="heading-primary">
+          <span class="heading-primary--main">
+            {main || "Programador Front-end"}
+          </span>
+          <span class="heading-primary--sub">
+            {sub || "en Cancún desde 2002, programando desde 1984"}
+          </span>
+        </h1>
+
+        {btnLink && (
+          <Link to={`/${btnLink}`} class="btn btn--white btn--animated">
+            <Trans>{btnText || "contact"}</Trans>
+          </Link>
+        )}
+      </div>
+    </Wrapper>
   );
 };
 
-export default Hero;
+export default AboutHeader;
+
+const Wrapper = styled.header`
+  height: 89vh;
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  position: relative;
+
+  .header__text-box {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .heading-primary {
+    color: var(--clr-primary-10);
+    text-shadow: 1px 1px 2px black;
+    text-transform: uppercase;
+    backface-visibility: hidden;
+    margin-bottom: 6rem;
+    &--main {
+      display: block;
+      font-size: 4rem;
+      font-weight: 400;
+      letter-spacing: 0.5rem;
+      animation-name: moveInLeft;
+      animation-duration: 1s;
+      animation-timing-function: ease-out;
+
+      /* animation-iteration-count: 3;
+      animation-delay: 3s; */
+    }
+    &--sub {
+      margin-top: 2rem;
+      display: block;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.4rem;
+      animation: moveInRight 1s ease-out;
+    }
+  }
+`;

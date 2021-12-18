@@ -4,7 +4,9 @@
 	"Developed Web Systems Description": "Portfolio von Systemen, die in Gatsby, React, Wordpress, Zend Framework, PHP Nuke und purem PHP entwickelt wurden.",
 	"Experience": "Erfahrung",
 	"Front-end developer": "Front-End-Entwickler",
+	"Front-end programmer": "Front-End Programmierer",
 	"Home": "Zuhause",
+	"I know how to use the following technologies": "Ich kenne mich mit folgenden Technologien aus",
 	"Programmer in Cancun": "Programmierer in Cancún",
 	"Projects": "Projekte",
 	"Resources I use": "Von mir verwendete Ressourcen",
@@ -13,7 +15,10 @@
 	"SEO text": "Suchmaschinenoptimierung",
 	"See more Resources": "Weitere Ressourcen anzeigen",
 	"See more web developments": "Weitere Webentwicklungen ansehen",
+	"Technological resources": "Technologische Ressourcen",
 	"Technological resources that I use": "Technologische Ressourcen, die ich verwende",
+	"That I have made or colaborated": "die ich gemacht oder mitgearbeitet habe",
+	"The Resources I Use (or have used)": "Die Ressourcen, die ich verwende (oder verwendet habe)",
 	"Web Servers": "Webserver",
 	"Web Servers text": "Administration von Linux-, Apache-, Ngnx-Servern oder Mailservern",
 	"about": "Über",
@@ -28,6 +33,7 @@
 	"featured projects": "unterstützte Projekte",
 	"home": "zuhause",
 	"i'm enrique": "Ich bin Enrique",
+	"in cancun since": "In Cancun seit 2002, Programmierung seit 1984",
 	"index-description": "Für die Front entwickle ich Websysteme mit Frameworks wie Gastby und React, für die Rückseite verwende ich Headless CMS wie Strapi, Contentful oder Wordpress",
 	"more info": "Mehr Info",
 	"resources": "ressourcen",
@@ -35,5 +41,5 @@
 	"ups, dead end": "ups, Sackgasse",
 	"view": "Aussicht",
 	"web development": "Web Entwicklung",
-	"web development text": "Entwicklung von Webinterfaces von der Codeseite"
+	"web development text": "Entwicklung von Websystemen mit Gatsby.js an der Front. Und für den Rücken nutze ich Headless CMS wie Strapi, Contentful oder Wordpress"
 }

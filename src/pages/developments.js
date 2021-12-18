@@ -5,6 +5,8 @@ import Projects from "../components/Developments";
 import Seo from "../components/Seo";
 import Layout from "../components/Layout";
 import { useTranslation } from "gatsby-plugin-react-i18next";
+import Hero from "../components/Hero";
+import bcgImage from "../assets/images/pages/developments.jpg";
 
 const ProjectsPage = ({
   data: {
@@ -17,6 +19,12 @@ const ProjectsPage = ({
       <Seo
         title={t("Developed Web Systems")}
         description={t("Developed Web Systems Description")}
+      />
+      <Hero
+        image={bcgImage}
+        main={t("developments")}
+        sub={t("That I have made or colaborated")}
+        btnLink="contact"
       />
       <main>
         <section className="developments-page">

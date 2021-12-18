@@ -5,6 +5,7 @@ import Seo from "../components/Seo";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 import Layout from "../components/Layout";
 import Jobs from "../components/Jobs";
+import Hero from "../components/Hero";
 
 const About = ({ data }) => {
   const {
@@ -14,6 +15,11 @@ const About = ({ data }) => {
   return (
     <Layout>
       <Seo title={t("About")} />
+      <Hero
+        main={t("Front-end programmer")}
+        sub={t("in cancun since")}
+        btnLink="contact"
+      />
       <section className="about-page">
         <div className="section-center about-center">
           <img

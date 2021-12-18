@@ -72,6 +72,9 @@ export default Language;
 const Wrapper = styled.div`
   margin-left: 3rem;
   font-size: 0.8rem;
+  @media screen and (max-width: 992px) {
+    display: none;
+  }
 
   &:hover {
     cursor: pointer;

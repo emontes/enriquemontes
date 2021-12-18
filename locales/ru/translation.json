@@ -4,7 +4,9 @@
 	"Developed Web Systems Description": "Портфолио систем, разработанных на Gatsby, React, Wordpress, Zend Framework, Php Nuke и чистом PHP.",
 	"Experience": "опыт",
 	"Front-end developer": "Front-End разработчик",
+	"Front-end programmer": "Front-End программист",
 	"Home": "Главная",
+	"I know how to use the following technologies": "Я знаю, как использовать следующие технологии",
 	"Programmer in Cancun": "Программист в Канкуне",
 	"Projects": "проектов",
 	"Resources I use": "Ресурсы, которые я использую",
@@ -13,7 +15,10 @@
 	"SEO text": "Поисковая оптимизация",
 	"See more Resources": "См. Дополнительные ресурсы",
 	"See more web developments": "Посмотреть больше веб-разработок",
+	"Technological resources": "Технологические ресурсы",
 	"Technological resources that I use": "Технологические ресурсы, которые я использую",
+	"That I have made or colaborated": "Что я сделал или сотрудничал",
+	"The Resources I Use (or have used)": "Ресурсы, которые я использую (или уже использовал)",
 	"Web Servers": "Веб-серверы",
 	"Web Servers text": "Администрирование серверов Linux, Apache, Ngnx или почтовых серверов",
 	"about": "Около",
@@ -28,6 +33,7 @@
 	"featured projects": "избранные проекты",
 	"home": "Главная",
 	"i'm enrique": "я Энрике",
+	"in cancun since": "в канкуне с 2002 г., программирование с 1984 г.",
 	"index-description": "Я разрабатываю веб-системы с использованием фреймворков, таких как Gastby и React, для передней части, а для задней части я использую Headless CMS, например Strapi, Contentful или Wordpress.",
 	"more info": "Больше информации",
 	"resources": "ресурсы",
@@ -35,5 +41,5 @@
 	"ups, dead end": "взлеты, тупик",
 	"view": "Посмотреть",
 	"web development": "веб-разработка",
-	"web development text": "Разработка веб-интерфейсов со стороны кода"
+	"web development text": "Разработка веб-систем с использованием Gatsby.js на передовой. А для спины я использую Headless CMS, например Strapi, Contentful или Wordpress."
 }
