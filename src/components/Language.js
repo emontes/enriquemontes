@@ -30,7 +30,7 @@ const Language = () => {
         <img
           src={languageFlag[language]}
           alt={languageName[language]}
-          style={{ height: "22px" }}
+          style={{ height: "1rem" }}
         />
 
         {languageName[language]}
@@ -71,6 +71,7 @@ export default Language;
 
 const Wrapper = styled.div`
   margin-left: 3rem;
+  font-size: 0.8rem;
 
   &:hover {
     cursor: pointer;

@@ -4,11 +4,6 @@ const data = [
     text: "home",
     url: "/",
   },
-  {
-    id: 2,
-    text: "about",
-    url: "/about/",
-  },
 
   {
     id: 3,
@@ -19,11 +14,6 @@ const data = [
     id: 4,
     text: "developments",
     url: "/developments/",
-  },
-  {
-    id: 5,
-    text: "contact",
-    url: "/contact/",
   },
 ];
 
