@@ -1,13 +1,14 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Title from "../components/Title";
+
 import Seo from "../components/Seo";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 import Layout from "../components/Layout";
+import About from "../components/About";
 import Jobs from "../components/Jobs";
 import Hero from "../components/Hero";
 
-const About = ({ data }) => {
+const AboutPage = ({ data }) => {
   const {
     strapiAbout: { title, image, info, stack },
   } = data;
@@ -16,28 +17,12 @@ const About = ({ data }) => {
     <Layout>
       <Seo title={t("About")} />
       <Hero
+        bgColor="var(--clr-grey-10)"
         main={t("Front-end programmer")}
         sub={t("in cancun since")}
         btnLink="contact"
       />
-      <section className="about-page">
-        <div className="section-center about-center">
-          <img
-            src={image.localFile.publicURL}
-            alt={title}
-            className="about-img-svg"
-          />
-          <article className="about-text">
-            <Title title={title} />
-            <p>{info}</p>
-            <div className="about-stack">
-              {stack.map((item) => {
-                return <span key={item.id}>{item.title}</span>;
-              })}
-            </div>
-          </article>
-        </div>
-      </section>
+      <About title={title} image={image} info={info} stack={stack} />
       <Jobs jobs={data.allStrapiJob.nodes} />
     </Layout>
   );
@@ -87,4 +72,4 @@ export const query = graphql`
   }
 `;
 
-export default About;
+export default AboutPage;

@@ -21,6 +21,7 @@ const ProjectsPage = ({
         description={t("Developed Web Systems Description")}
       />
       <Hero
+        bgColor="var(--clr-grey-10)"
         image={bcgImage}
         main={t("developments")}
         sub={t("That I have made or colaborated")}

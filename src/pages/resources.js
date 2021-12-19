@@ -16,6 +16,7 @@ const ResourcesPage = ({ data }) => {
         description={t("ResourcesDescription")}
       />
       <Hero
+        bgColor="var(--clr-primary-9)"
         image={bcgImage}
         main={t("Technological resources")}
         sub={t("The Resources I Use (or have used)")}

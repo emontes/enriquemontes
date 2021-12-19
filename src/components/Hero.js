@@ -3,30 +3,34 @@ import BackImage from "../assets/images/pages/about.jpg";
 import styled from "styled-components";
 import { Trans, Link } from "gatsby-plugin-react-i18next";
 
-const AboutHeader = ({ image, main, sub, btnLink, btnText }) => {
+const AboutHeader = ({ bgColor, image, main, sub, btnLink, btnText }) => {
   return (
-    <Wrapper
-      style={{
-        backgroundImage: `linear-gradient(to right bottom, rgb(0, 89, 153,0.8), rgb(199, 226, 222,0.8)), url(${
-          image || BackImage
-        })`,
-      }}
-    >
-      <div class="header__text-box">
-        <h1 class="heading-primary">
-          <span class="heading-primary--main">
-            {main || "Programador Front-end"}
-          </span>
-          <span class="heading-primary--sub">
-            {sub || "en Cancún desde 2002, programando desde 1984"}
-          </span>
-        </h1>
+    <Wrapper style={{ backgroundColor: `${bgColor || "var(--clr-white)"}` }}>
+      <div
+        className="header"
+        style={{
+          backgroundImage: `linear-gradient(to right bottom, rgb(0, 89, 153,0.8), rgb(199, 226, 222,0.8)), url(${
+            image || BackImage
+          })`,
+          backgroundColor: "var(--clr-primary-8)",
+        }}
+      >
+        <div class="header__text-box">
+          <h1 class="heading-primary">
+            <span class="heading-primary--main">
+              {main || "Programador Front-end"}
+            </span>
+            <span class="heading-primary--sub">
+              {sub || "en Cancún desde 2002, programando desde 1984"}
+            </span>
+          </h1>
 
-        {btnLink && (
-          <Link to={`/${btnLink}`} class="btn btn--white btn--animated">
-            <Trans>{btnText || "contact"}</Trans>
-          </Link>
-        )}
+          {btnLink && (
+            <Link to={`/${btnLink}`} class="btn btn--white btn--animated">
+              <Trans>{btnText || "contact"}</Trans>
+            </Link>
+          )}
+        </div>
       </div>
     </Wrapper>
   );
@@ -35,11 +39,13 @@ const AboutHeader = ({ image, main, sub, btnLink, btnText }) => {
 export default AboutHeader;
 
 const Wrapper = styled.header`
-  height: 89vh;
-  background-size: cover;
-  background-position: top;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  position: relative;
+  .header {
+    height: 89vh;
+    background-size: cover;
+    background-position: top;
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    position: relative;
+  }
 
   .header__text-box {
     position: absolute;
