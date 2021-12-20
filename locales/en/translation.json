@@ -12,13 +12,14 @@
 	"Resources I use": "Resources I use",
 	"ResourcesDescription": "The frameworks that I currently use for my web development are Gatsby and React, but I have mastered a great variety of Content Managers, Libraries, utilities ... I have been programming for more than 30 years.",
 	"SEO": "SEO",
-	"SEO text": "Search Engine Optimization",
+	"SEO text": "Actions and techniques for website optimization to improve visibility in search engines such as Google. Airbnb Ads Diagnostics",
 	"See more Resources": "See more Resources",
 	"See more web developments": "See more web developments",
 	"Technological resources": "Technological resources",
 	"Technological resources that I use": "Technological resources that I use",
 	"That I have made or colaborated": "That I have made or colaborated",
 	"The Resources I Use (or have used)": "The Resources I Use (or have used)",
+	"Used since": "Used since",
 	"Web Servers": "Web Servers",
 	"Web Servers text": "Administration of Linux, Apache, Ngnx servers or mail servers",
 	"about": "about",
@@ -29,6 +30,8 @@
 	"contact me": "contact me",
 	"contact-description": "Contact form with Enrique Montes. Fill out this form to contact me.",
 	"copyright": "copyright",
+	"data modeling": "data modeling",
+	"data modeling text": "Definition and analysis o data requirements needed to support the business processes ",
 	"developments": "developments",
 	"featured projects": "featured projects",
 	"home": "home",
@@ -41,5 +44,5 @@
 	"ups, dead end": "ups, dead end",
 	"view": "view",
 	"web development": "web development",
-	"web development text": "Web Systems Development using Gatsby.js on the Front. And for the Back I use Headless CMS like Strapi, Contentful or Wordpress"
+	"web development text": "I Develop in Gatsby and I can make your website fly at the speed of Gatsbyjs.  Get top rankings at Google's Lighthouse!\n"
 }

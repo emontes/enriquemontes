@@ -6,9 +6,10 @@ import Resource from "./Resource";
 
 const Resources = ({ recursos, showLink }) => {
   const { t } = useTranslation();
+  const paddingSec = showLink ? "16rem 0 10rem" : "6rem 0 2rem";
 
   return (
-    <Wrapper className="section">
+    <Wrapper style={{ padding: `${paddingSec}` }}>
       <Title title={t("I know how to use the following technologies")} />
       <div className="center">
         {recursos.map((item) => {
@@ -28,7 +29,6 @@ const Resources = ({ recursos, showLink }) => {
 export default Resources;
 
 const Wrapper = styled.section`
-  padding: 6rem 0;
   text-align: center;
   background: var(--clr-primary-9);
 

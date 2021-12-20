@@ -23,8 +23,9 @@ const IndexPage = ({ data }) => {
       />
       <main>
         <Hero />
-        <Services />
         <Jobs jobs={data.allStrapiJob.nodes} showLink />
+        <Services />
+
         <Resources recursos={data.recursos.nodes} showLink />
         <Developments
           title={t("featured projects")}

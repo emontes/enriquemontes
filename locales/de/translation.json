@@ -12,13 +12,14 @@
 	"Resources I use": "Von mir verwendete Ressourcen",
 	"ResourcesDescription": "Die Frameworks, die ich derzeit für meine Webentwicklung verwende, sind Gatsby und React, aber ich beherrsche eine Vielzahl von Content Managern, Bibliotheken, Utilities ... Ich programmiere seit mehr als 30 Jahren.",
 	"SEO": "SEO",
-	"SEO text": "Suchmaschinenoptimierung",
+	"SEO text": "Suchmaschinenoptimierung für Websites. Verbesserung der Airbnb-Anzeigen, um die Buchungen zu erhöhen",
 	"See more Resources": "Weitere Ressourcen anzeigen",
 	"See more web developments": "Weitere Webentwicklungen ansehen",
 	"Technological resources": "Technologische Ressourcen",
 	"Technological resources that I use": "Technologische Ressourcen, die ich verwende",
 	"That I have made or colaborated": "die ich gemacht oder mitgearbeitet habe",
 	"The Resources I Use (or have used)": "Die Ressourcen, die ich verwende (oder verwendet habe)",
+	"Used since": "Verwendet seit",
 	"Web Servers": "Webserver",
 	"Web Servers text": "Administration von Linux-, Apache-, Ngnx-Servern oder Mailservern",
 	"about": "Über",
@@ -29,6 +30,8 @@
 	"contact me": "kontaktiere mich",
 	"contact-description": "Kontaktformular mit Enrique Montes. Füllen Sie dieses Formular aus, um mich zu kontaktieren.",
 	"copyright": "Urheberrechte",
+	"data modeling": "Datenmodellierung",
+	"data modeling text": "Definition und Analyse von Datenanforderungen, die zur Unterstützung der Geschäftsprozesse erforderlich sind",
 	"developments": "entwicklungen",
 	"featured projects": "unterstützte Projekte",
 	"home": "zuhause",
@@ -41,5 +44,5 @@
 	"ups, dead end": "ups, Sackgasse",
 	"view": "Aussicht",
 	"web development": "Web Entwicklung",
-	"web development text": "Entwicklung von Websystemen mit Gatsby.js an der Front. Und für den Rücken nutze ich Headless CMS wie Strapi, Contentful oder Wordpress"
+	"web development text": "Ich entwickle in Gatsby und kann Ihre Website mit der Geschwindigkeit von Gatsbyjs fliegen lassen. Holen Sie sich Top-Platzierungen bei Googles Leuchtturm!\n"
 }

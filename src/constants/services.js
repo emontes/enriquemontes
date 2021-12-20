@@ -1,5 +1,5 @@
 import React from "react";
-import { FaCode, FaSketch, FaAndroid } from "react-icons/fa";
+import { FaCode, FaSketch, FaDatabase } from "react-icons/fa";
 
 const services = [
   {
@@ -9,16 +9,16 @@ const services = [
     text: "web development text",
   },
   {
+    id: 3,
+    icon: <FaDatabase className="service-icon" />,
+    title: "data modeling",
+    text: `data modeling text`,
+  },
+  {
     id: 2,
     icon: <FaSketch className="service-icon" />,
     title: "SEO",
     text: `SEO text`,
-  },
-  {
-    id: 3,
-    icon: <FaAndroid className="service-icon" />,
-    title: "Web Servers",
-    text: `Web Servers text`,
   },
 ];
 

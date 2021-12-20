@@ -23,7 +23,6 @@ const Wrapper = styled.div`
   );
   color: transparent;
   -webkit-background-clip: text;
-  color: transparent;
   letter-spacing: 0.2rem;
   transition: all 0.2s;
   &:hover {

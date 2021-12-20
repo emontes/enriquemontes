@@ -12,13 +12,14 @@
 	"Resources I use": "משאבים שאני משתמש בהם",
 	"ResourcesDescription": "המסגרות שבהן אני משתמש כרגע לפיתוח האינטרנט שלי הן Gatsby ו-React, אבל שלטתי במגוון גדול של מנהלי תוכן, ספריות, כלי עזר... אני מתכנת כבר יותר מ-30 שנה.",
 	"SEO": "קידום אתרים",
-	"SEO text": "אופטימיזציה למנועי חיפוש",
+	"SEO text": "אופטימיזציה למנועי חיפוש עבור אתרי אינטרנט. שיפור מודעות Airbnb כדי להגדיל את ההזמנות",
 	"See more Resources": "ראה משאבים נוספים",
 	"See more web developments": "ראה פיתוחים נוספים באינטרנט",
 	"Technological resources": "משאבים טכנולוגיים",
 	"Technological resources that I use": "משאבים טכנולוגיים שאני משתמש בהם",
 	"That I have made or colaborated": "שהכנתי או שיתפתי פעולה",
 	"The Resources I Use (or have used)": "המשאבים שבהם אני משתמש (או שהשתמשתי בהם)",
+	"Used since": "בשימוש מאז",
 	"Web Servers": "שרתי אינטרנט",
 	"Web Servers text": "ניהול שרתי Linux, Apache, Ngnx או שרתי דואר",
 	"about": "על אודות",
@@ -29,6 +30,8 @@
 	"contact me": "צור איתי קשר",
 	"contact-description": "טופס יצירת קשר עם אנריקה מונטס. מלא טופס זה כדי ליצור איתי קשר.",
 	"copyright": "זכויות יוצרים",
+	"data modeling": "מודל נתונים",
+	"data modeling text": "הגדרה וניתוח של דרישות הנתונים הנדרשות לתמיכה בתהליכים העסקיים",
 	"developments": "התפתחויות",
 	"featured projects": "פרויקטים מומלצים",
 	"home": "בית",
@@ -41,5 +44,5 @@
 	"ups, dead end": "עליות, מבוי סתום",
 	"view": "נוף",
 	"web development": "בניית אתרים",
-	"web development text": "פיתוח מערכות אינטרנט באמצעות Gatsby.js בחזית. ולגב אני משתמש ב- Headless CMS כמו Strapi, Contentful או Wordpress"
+	"web development text": "אני מפתח בגטסבי ואני יכול לגרום לאתר שלך לעוף במהירות של גטסבי. קבל דירוגים מובילים במגדלור של גוגל!\n"
 }

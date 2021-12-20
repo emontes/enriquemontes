@@ -12,13 +12,14 @@
 	"Resources I use": "Recursos que utilizo",
 	"ResourcesDescription": "Las frameworks que uso actualmente para mis desarrollos web son Gatsby y React, pero dominio una gran variedad de Manejadores de Contenido, Bibliotecas, utilerías... son más de 30 años programando.",
 	"SEO": "SEO",
-	"SEO text": "Optimización para Motores de Búsqueda",
+	"SEO text": "Acciones y técnicas para la optimización de sitios web para mejorar la visibilidad en motores de búsqueda como Google. Diagnóstico de anuncios de Airbnb",
 	"See more Resources": "Ver más recursos",
 	"See more web developments": "Ver más desarrollos web",
 	"Technological resources": "recursos Tecnológicos",
 	"Technological resources that I use": "Recursos tecnológicos que utilizo",
 	"That I have made or colaborated": "Que he realizado o colaborado",
 	"The Resources I Use (or have used)": "Los recursos que uso (o he usado)",
+	"Used since": "Usado desde",
 	"Web Servers": "Servidores Web",
 	"Web Servers text": "Administración de servidores Linux, Apache, Ngnx o servidores de correo",
 	"about": "Acerca",
@@ -29,6 +30,8 @@
 	"contact me": "contáctame",
 	"contact-description": "Formulario de contacto con Enrique Montes. Complete esta forma para contactarme.",
 	"copyright": "derechos de autor",
+	"data modeling": "modelado de datos",
+	"data modeling text": "Definición y análisis de los requisitos de datos necesarios para respaldar los procesos comerciales.",
 	"developments": "desarrollos",
 	"featured projects": "proyectos destacados",
 	"home": "inicio",
@@ -41,5 +44,5 @@
 	"ups, dead end": "ups, callejón sin salida",
 	"view": "Ver",
 	"web development": "desarrollo web",
-	"web development text": "Desarrollo de Sistemas Web utilizando Gatsby.js en el Front.  Y para el Back utilizo Headless CMS como Strapi, Contentful o Wordpress"
+	"web development text": "Desarrollo en Gatsby y puedo hacer que su sitio web vuele a la velocidad de Gatsbyjs. ¡Obtén las mejores clasificaciones en el faro de Google!\n"
 }

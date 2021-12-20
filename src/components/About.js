@@ -83,7 +83,7 @@ const Wrapper = styled.section`
         top: 10rem;
       }
       &:hover {
-        outline: 0.5rem solid var(--clr-primary-5);
+        outline: 0.5rem solid var(--clr-primary-4);
         transform: scale(1.05) translateY(-0.5rem);
         box-shadow: 0 2.5rem 4rem rgba(0, 37, 92, 0.5);
         z-index: 20;
