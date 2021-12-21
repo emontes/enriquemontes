@@ -10,19 +10,26 @@ import Hero from "../components/Hero";
 
 const AboutPage = ({ data }) => {
   const {
-    strapiAbout: { title, image, info, stack },
+    strapiAbout: { title, info, stack },
   } = data;
+
   const { t } = useTranslation();
+
   return (
     <Layout>
-      <Seo title={t("About")} />
+      <Seo
+        title={t("aboutTheProgrammer")}
+        description={t("aboutPageDescription")}
+        image={data.image.publicURL}
+      />
       <Hero
         bgColor="var(--clr-grey-10)"
         main={t("Front-end programmer")}
         sub={t("in cancun since")}
         btnLink="contact"
+        image={data.image.childImageSharp}
       />
-      <About title={title} image={image} info={info} stack={stack} />
+      <About title={title} info={info} stack={stack} />
       <Jobs jobs={data.allStrapiJob.nodes} />
     </Layout>
   );
@@ -47,11 +54,6 @@ export const query = graphql`
         id
         title
       }
-      image {
-        localFile {
-          publicURL
-        }
-      }
     }
 
     allStrapiJob(
@@ -68,6 +70,13 @@ export const query = graphql`
           name
         }
       }
+    }
+
+    image: file(relativePath: { eq: "pages/about.jpg" }) {
+      childImageSharp {
+        gatsbyImageData
+      }
+      publicURL
     }
   }
 `;

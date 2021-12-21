@@ -1,35 +1,36 @@
 import React from "react";
-import BackImage from "../assets/images/pages/about.jpg";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 import { Trans, Link } from "gatsby-plugin-react-i18next";
 
 const AboutHeader = ({ bgColor, image, main, sub, btnLink, btnText }) => {
   return (
     <Wrapper style={{ backgroundColor: `${bgColor || "var(--clr-white)"}` }}>
-      <div
-        className="header"
-        style={{
-          backgroundImage: `linear-gradient(to right bottom, rgb(0, 89, 153,0.8), rgb(199, 226, 222,0.8)), url(${
-            image || BackImage
-          })`,
-          backgroundColor: "var(--clr-primary-8)",
-        }}
-      >
-        <div class="header__text-box">
-          <h1 class="heading-primary">
-            <span class="heading-primary--main">
-              {main || "Programador Front-end"}
-            </span>
-            <span class="heading-primary--sub">
-              {sub || "en Cancún desde 2002, programando desde 1984"}
-            </span>
-          </h1>
+      <div className="hero">
+        <GatsbyImage
+          image={getImage(image)}
+          alt="Agente de Seguros"
+          className="hero-img"
+          placeholder="tracedSVG"
+          layout="constrained"
+        />
+        <div className="hero-container">
+          <div class="header__text-box">
+            <h1 class="heading-primary">
+              <span class="heading-primary--main">
+                {main || "Programador Front-end"}
+              </span>
+              <span class="heading-primary--sub">
+                {sub || "en Cancún desde 2002, programando desde 1984"}
+              </span>
+            </h1>
 
-          {btnLink && (
-            <Link to={`/${btnLink}`} class="btn btn--white btn--animated">
-              <Trans>{btnText || "contact"}</Trans>
-            </Link>
-          )}
+            {btnLink && (
+              <Link to={`/${btnLink}`} class="btn btn--white btn--animated">
+                <Trans>{btnText || "contact"}</Trans>
+              </Link>
+            )}
+          </div>
         </div>
       </div>
     </Wrapper>
@@ -39,12 +40,35 @@ const AboutHeader = ({ bgColor, image, main, sub, btnLink, btnText }) => {
 export default AboutHeader;
 
 const Wrapper = styled.header`
-  .header {
+  .hero-img {
+    height: 100%;
+    border-radius: var(--borderRadius);
+  }
+  .hero {
     height: 89vh;
+    background-color: var(--clr-primary-9);
     background-size: cover;
     background-position: top;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
     position: relative;
+  }
+  .hero-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(
+      to bottom right,
+      rgba(0, 37, 92, 0.7),
+      rgba(199, 226, 222, 0.9)
+    );
+    border-radius: var(--borderRadius);
   }
 
   .header__text-box {

@@ -6,23 +6,21 @@ import Seo from "../components/Seo";
 import Layout from "../components/Layout";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 import Hero from "../components/Hero";
-import bcgImage from "../assets/images/pages/developments.jpg";
 
-const ProjectsPage = ({
-  data: {
-    allStrapiProject: { nodes: projects },
-  },
-}) => {
+const ProjectsPage = ({ data }) => {
+  const projects = data.allStrapiProject.nodes;
+
   const { t } = useTranslation();
   return (
     <Layout>
       <Seo
         title={t("Developed Web Systems")}
         description={t("Developed Web Systems Description")}
+        image={data.image.publicURL}
       />
       <Hero
         bgColor="var(--clr-grey-10)"
-        image={bcgImage}
+        image={data.image.childImageSharp}
         main={t("developments")}
         sub={t("That I have made or colaborated")}
         btnLink="contact"
@@ -86,6 +84,13 @@ export const query = graphql`
           }
         }
       }
+    }
+
+    image: file(relativePath: { eq: "pages/developments.jpg" }) {
+      childImageSharp {
+        gatsbyImageData
+      }
+      publicURL
     }
   }
 `;

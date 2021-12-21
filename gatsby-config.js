@@ -11,7 +11,7 @@ module.exports = {
     description: `Desarrollo sistemas web utilizando Frameworks como Gastby y React para el Front,
     y para el Back uso Headless CMS como Strapi, Contentful o Wordpress`,
     titleTemplate: `%s | Enrique Montes`,
-    url: `https://enriquemontes.com/`,
+    url: `https://enriquemontes.com`,
     twitterUsername: `@el_ade`,
     image: `/desarrollador-web.jpg`,
   },
