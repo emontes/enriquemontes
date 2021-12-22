@@ -37,9 +37,6 @@ const Language = () => {
       </div>
       <ul>
         {languages.map((lng) => {
-          {
-            /* if (lng !== language) { */
-          }
           return (
             <li>
               <Link
@@ -57,10 +54,6 @@ const Language = () => {
               </Link>
             </li>
           );
-          {
-            /* }
-          return null; */
-          }
         })}
       </ul>
     </Wrapper>

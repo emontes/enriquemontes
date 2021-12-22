@@ -115,6 +115,7 @@ const Wrapper = styled.header`
       grid-row: 1/1;
       grid-column: 7/-1;
       border-radius: 2rem;
+      transform: skewY(1.5deg);
     }
     .hero-img::after {
       content: "";
