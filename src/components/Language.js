@@ -38,7 +38,7 @@ const Language = () => {
       <ul>
         {languages.map((lng) => {
           return (
-            <li>
+            <li key={lng}>
               <Link
                 key={lng}
                 to={originalPath}

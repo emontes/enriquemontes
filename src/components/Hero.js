@@ -15,18 +15,18 @@ const AboutHeader = ({ bgColor, image, main, sub, btnLink, btnText }) => {
           layout="constrained"
         />
         <div className="hero-container">
-          <div class="header__text-box">
-            <h1 class="heading-primary">
-              <span class="heading-primary--main">
+          <div className="header__text-box">
+            <h1 className="heading-primary">
+              <span className="heading-primary--main">
                 {main || "Programador Front-end"}
               </span>
-              <span class="heading-primary--sub">
+              <span className="heading-primary--sub">
                 {sub || "en Cancún desde 2002, programando desde 1984"}
               </span>
             </h1>
 
             {btnLink && (
-              <Link to={`/${btnLink}`} class="btn btn--white btn--animated">
+              <Link to={`/${btnLink}`} className="btn btn--white btn--animated">
                 <Trans>{btnText || "contact"}</Trans>
               </Link>
             )}

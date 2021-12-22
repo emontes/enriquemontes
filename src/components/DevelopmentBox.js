@@ -26,18 +26,23 @@ const Project = ({
           <div className="project-number">{created}</div>
           <div className="links">
             {github && (
-              <a href={github} target="_blank">
+              <a href={github} target="_blank" rel="noopener noreferrer">
                 <FaGithubSquare className="project-icon" />
               </a>
             )}
 
-            <a href={url} className="project-links" target="_blank">
+            <a
+              href={url}
+              className="project-links"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaShareSquare className="project-icon" />
             </a>
           </div>
         </div>
 
-        <Link to={`/projects/${slug}`} className="project-slug">
+        <Link to={`/developments/${slug}`} className="project-slug">
           <h3>{title}</h3>
         </Link>
 
@@ -49,6 +54,7 @@ const Project = ({
           {recursos.map((recurso) => {
             return (
               <GatsbyImage
+                key={recurso.id}
                 image={getImage(recurso.image.localFile)}
                 alt={recurso.title}
               />

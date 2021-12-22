@@ -10,7 +10,9 @@ const ContactPage = ({ data }) => {
   return (
     <Layout>
       <Seo title={t("Contact")} description={t("contact-description")} />
-      <Contact />
+      <main>
+        <Contact />
+      </main>
     </Layout>
   );
 };

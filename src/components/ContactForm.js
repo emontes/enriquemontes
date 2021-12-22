@@ -83,7 +83,6 @@ class ContactForm extends React.Component {
             type="textarea"
             placeholder="How can I help you?"
             multiline
-            className="completo"
             rows="3"
             onChange={handleChange}
             defaultValue={state.values.comment}

@@ -7,6 +7,7 @@ import Layout from "../components/Layout";
 import About from "../components/About";
 import Jobs from "../components/Jobs";
 import Hero from "../components/Hero";
+import Testimonials from "../components/Testimonials";
 
 const AboutPage = ({ data }) => {
   const {
@@ -31,6 +32,7 @@ const AboutPage = ({ data }) => {
       />
       <About title={title} info={info} stack={stack} />
       <Jobs jobs={data.allStrapiJob.nodes} />
+      <Testimonials />
     </Layout>
   );
 };

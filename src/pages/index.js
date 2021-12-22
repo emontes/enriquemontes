@@ -8,13 +8,14 @@ import Seo from "../components/Seo";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 import Layout from "../components/Layout";
 import Resources from "../components/Resources";
+import Testimonials from "../components/Testimonials";
 
 const IndexPage = ({ data }) => {
   const {
     allStrapiProject: { nodes: projects },
   } = data;
   const { t } = useTranslation();
-  console.log("---> Data", data);
+
   return (
     <Layout>
       <Seo
@@ -32,6 +33,7 @@ const IndexPage = ({ data }) => {
           showLink
           projects={projects}
         />
+        <Testimonials />
       </main>
     </Layout>
   );

@@ -8,7 +8,6 @@ const Jobs = ({ jobs, showLink }) => {
   const [value, setValue] = React.useState(0);
   const { company, position, date, desc } = jobs[value];
   const { t } = useTranslation();
-  const jobBtn = "job-btn";
 
   return (
     <Wrapper className="section">

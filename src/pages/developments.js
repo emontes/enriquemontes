@@ -6,6 +6,7 @@ import Seo from "../components/Seo";
 import Layout from "../components/Layout";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 import Hero from "../components/Hero";
+import Testimonials from "../components/Testimonials";
 
 const ProjectsPage = ({ data }) => {
   const projects = data.allStrapiProject.nodes;
@@ -33,6 +34,7 @@ const ProjectsPage = ({ data }) => {
             allProjects
           />
         </section>
+        <Testimonials />
       </main>
     </Layout>
   );

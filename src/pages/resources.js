@@ -5,6 +5,7 @@ import Layout from "../components/Layout";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 import Resources from "../components/Resources";
 import Hero from "../components/Hero";
+import Testimonials from "../components/Testimonials";
 
 const ResourcesPage = ({ data }) => {
   const { t } = useTranslation();
@@ -26,6 +27,7 @@ const ResourcesPage = ({ data }) => {
         <section className="developments-page">
           <Resources recursos={data.recursos.nodes} />
         </section>
+        <Testimonials />
       </main>
     </Layout>
   );
