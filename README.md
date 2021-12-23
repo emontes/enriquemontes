@@ -11,6 +11,9 @@ npm start develop
 
 Esta alojado en Netlify con la cuenta de enriqueadelino
 
+Previous version of the site at:
+https://60614c5f60636e57113b7379--competent-benz-660eeb.netlify.app/
+
 ## Setup Notes
 
 1. Used Hello World Starter (all packages included)

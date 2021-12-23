@@ -15,11 +15,63 @@ module.exports = {
     twitterUsername: `@el_ade`,
     image: `/desarrollador-web.jpg`,
   },
+
   plugins: [
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Programmer in Cancun`,
+        short_name: `Enrique Montes`,
+        description: `Development of super fast websites with Gatsby.js`,
+        start_url: `/`,
+        background_color: `#eefbff`,
+        theme_color: `#2892d7`,
+        lang: `en`,
+        display: `standalone`,
+        icon: `src/assets/images/logo-eama.png`, // This path is relative to the root of the site.
+        localize: [
+          {
+            start_url: `/es/`,
+            lang: `es`,
+            name: `Programador en Cancún`,
+            short_name: `Enrique Montes`,
+            description: `Desarrollo de Sitios Web super rápidos con Gatsby.js`,
+          },
+        ],
+        localize: [
+          {
+            start_url: `/de/`,
+            lang: `de`,
+            name: `Programmierer in Cancún`,
+            short_name: `Enrique Montes`,
+            description: `Entwicklung superschneller Websites mit Gatsby.js`,
+          },
+        ],
+        localize: [
+          {
+            start_url: `/he/`,
+            lang: `he`,
+            name: `מתכנת בקנקון`,
+            short_name: `Enrique Montes`,
+            description: `פיתוח אתרים סופר מהירים עם Gatsby.js`,
+          },
+        ],
+        ocalize: [
+          {
+            start_url: `/ru/`,
+            lang: `ru`,
+            name: `Программист в Канкуне`,
+            short_name: `Enrique Montes`,
+            description: `Разработка сверхбыстрых сайтов с Gatsby.js`,
+          },
+        ],
+      },
+    },
+    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

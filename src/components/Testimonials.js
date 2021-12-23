@@ -84,7 +84,7 @@ const Wrapper = styled.section`
     box-shadow: 0 2rem 4rem rgba(0, 37, 92, 0.1);
     background-color: rgba(241, 245, 248, 0.6);
     border-radius: 3px;
-    padding: 1.5rem 2rem 2.3rem 3rem;
+    padding: 1.5rem 2rem 1rem 3rem;
 
     color: var(--clr-grey-5);
     transform: skewX(-12deg);

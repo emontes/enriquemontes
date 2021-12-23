@@ -1,10 +1,11 @@
 import React from "react";
 import socialLinks from "../constants/social_links";
 import { Trans } from "gatsby-plugin-react-i18next";
+import styled from "styled-components";
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <Wrapper>
       <div>
         <div className="footer-links social-links">
           {socialLinks.map((link) => {
@@ -21,8 +22,22 @@ const Footer = () => {
           <Trans>all rights reserved</Trans>
         </h4>
       </div>
-    </footer>
+    </Wrapper>
   );
 };
 
 export default Footer;
+
+const Wrapper = styled.footer`
+  height: 9rem;
+  background: #222;
+  text-align: center;
+  display: grid;
+  place-items: center;
+  color: var(--clr-white);
+
+  h4 {
+    margin-top: 0.5rem;
+    font-weight: normal;
+  }
+`;
