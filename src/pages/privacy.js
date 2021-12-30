@@ -8,14 +8,15 @@ const privacy = () => {
         <h3>Aviso de privacidad integral</h3>
         <p>
           Enrique Adelino Montes Araujo mejor conocido como Enrique Montes, con
-          domicilio en Av. Neza y Juárez 23 y portal de internet
-          enriquemontes.com, es el responsable del uso y protección de sus datos
-          personales, y al respecto le informamos lo siguiente: ¿Para qué fines
-          utilizaremos sus datos personales? Los datos personales que recabamos
-          de usted, los utilizaremos para las siguientes finalidades que son
-          necesarias para el servicio que solicita: Respuesta a mensajes del
-          formulario de contacto, Prestación de cualquier servicio solicitado,
-          Envío de productos adquiridos en esta tienda en línea
+          domicilio en Av. Nizuc 14 Mza 2 Lt 29 SM 17, Cancún, Quintana Roo; y
+          portal de internet enriquemontes.com, es el responsable del uso y
+          protección de sus datos personales, y al respecto le informamos lo
+          siguiente: ¿Para qué fines utilizaremos sus datos personales? Los
+          datos personales que recabamos de usted, los utilizaremos para las
+          siguientes finalidades que son necesarias para el servicio que
+          solicita: Respuesta a mensajes del formulario de contacto, Prestación
+          de cualquier servicio solicitado, Envío de productos adquiridos en
+          esta tienda en línea
         </p>
         <h4>¿Qué datos personales utilizaremos para estos fines?</h4>
         <p>
@@ -102,7 +103,7 @@ const privacy = () => {
           sufrir y siempre podrá consultar las actualizaciones que existan en el
           sitio web solito.com.
         </p>
-        <p>Última actualización de este aviso de privacidad: 21/12/2021</p>
+        <p>Última actualización de este aviso de privacidad: 30/12/2021</p>
       </section>
     </Layout>
   );

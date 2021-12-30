@@ -20,14 +20,14 @@ Variables
   --clr-primary-5: #2892d7;
   /* lighter shades of primary color */
   --clr-primary-6: #6d94bc;
-  --clr-primary-7: #00cbd2;
+  --clr-primary-7: #5ba2bb;
   --clr-primary-8: rgb(199, 226, 222);
   --clr-primary-9: #e6f4f1;
   --clr-primary-10: #eefbff;
   /* darkest grey - used for headings */
   --clr-grey-1: hsl(209, 61%, 16%);
   --clr-grey-3: hsl(209, 34%, 30%);
-  --clr-grey-4: hsl(209, 28%, 39%);
+  --clr-grey-4: #0b5780;
   /* grey used for paragraphs */
   --clr-grey-5: hsl(210, 22%, 49%);
   --clr-grey-8: hsl(210, 31%, 80%);
@@ -36,6 +36,7 @@ Variables
   --clr-green-dark: hsl(125, 67%, 35%);
   --clr-red-dark: hsl(360, 67%, 44%);
   --clr-red-light: hsl(360, 71%, 66%);
+  --clr-black: #222;
   --clr-white: #fff;
   --clr-white-transparency-8: rgba(255, 255, 255, 0.8);
   --ff-primary: "Roboto", sans-serif;

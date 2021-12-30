@@ -9,6 +9,11 @@ cd portfolio-strapi
 npm start develop
 ```
 
+Para activar Strapi
+http://localhost:1337/admin/
+User: e\***_@_**.com.mx
+Password: LaDeGeocities con punto nacimiento
+
 Esta alojado en Netlify con la cuenta de enriqueadelino
 
 Previous version of the site at:
