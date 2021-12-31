@@ -69,10 +69,11 @@ const Wrapper = styled.div`
     display: none;
   }
 
-  &:hover {
+  :hover {
     cursor: pointer;
     ul {
-      display: block;
+      opacity: 1;
+      top: -7rem;
     }
   }
   .current-language {
@@ -84,10 +85,13 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     gap: 10px;
+    z-index: 3;
   }
 
   ul {
-    display: none;
+    position: absolute;
+    top: -21rem;
+    opacity: 0;
     padding: 0.8rem;
     transition: var(--transition);
     margin-top: 8rem;
