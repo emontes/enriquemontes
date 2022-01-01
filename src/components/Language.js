@@ -30,7 +30,7 @@ const Language = () => {
         <img
           src={languageFlag[language]}
           alt={languageName[language]}
-          style={{ height: "1rem" }}
+          style={{ height: "1.3rem" }}
         />
 
         {languageName[language]}
@@ -48,7 +48,7 @@ const Language = () => {
                 <img
                   src={languageFlag[lng]}
                   alt={languageName[lng]}
-                  style={{ height: "22px" }}
+                  style={{ height: "2.2rem" }}
                 />
                 {languageName[lng]}
               </Link>
@@ -63,11 +63,8 @@ const Language = () => {
 export default Language;
 
 const Wrapper = styled.div`
-  margin-left: 3rem;
-  font-size: 0.8rem;
-  @media screen and (max-width: 992px) {
-    display: none;
-  }
+  font-size: 1rem;
+  postion: relative;
 
   :hover {
     cursor: pointer;
@@ -80,11 +77,11 @@ const Wrapper = styled.div`
     border: 1px solid var(--clr-grey-9);
     border-radius: var(--radius);
     color: var(--clr-grey-5);
-    padding: 8px 20px;
+    padding: 0.8rem 2rem;
 
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 1rem;
     z-index: 3;
   }
 

@@ -3,6 +3,7 @@ import socialLinks from "../constants/social_links";
 import { Link, Trans } from "gatsby-plugin-react-i18next";
 import styled from "styled-components";
 import { StaticImage } from "gatsby-plugin-image";
+import device from "../assets/themes/device";
 
 const Footer = () => {
   return (
@@ -25,6 +26,7 @@ const Footer = () => {
       </div>
       <div className="footer-bottom">
         <div className="navigation">
+          <div className="underline" />
           <ul class="footer__list">
             <li class="footer__item">
               <Link to="/about" className="link">
@@ -46,11 +48,12 @@ const Footer = () => {
         </div>
 
         <div className="copy">
-          <h4>
+          <div className="underline" />
+          <p>
             <Trans>copyright</Trans> &copy; {new Date().getFullYear()}{" "}
             <span>Enrique Adelino Montes Araujo</span>{" "}
             <Trans>all rights reserved</Trans>
-          </h4>
+          </p>
         </div>
       </div>
     </Wrapper>
@@ -71,12 +74,12 @@ const Wrapper = styled.footer`
     align-items: center;
   }
   .logo {
-    width: 7rem;
+    width: 8rem;
     height: auto;
   }
 
   .social-links {
-    margin-top: 1rem;
+    margin-top: 2rem;
   }
   .social-link {
     color: var(--clr-primary-7);
@@ -87,20 +90,21 @@ const Wrapper = styled.footer`
 
   .footer-bottom {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 20%;
-    > * {
-      flex: 1;
+    flex-direction: column;
+
+    @media ${device.tablet} {
+      flex-direction: row;
+
+      gap: 20%;
+      > * {
+        flex: 1;
+      }
     }
   }
 
   .navigation {
-    border-top: 1px solid var(--clr-grey-10);
-    padding-top: 1rem;
+    padding: 1rem;
     display: inline-block;
-    margin-left: 5%;
     text-align: center;
   }
 
@@ -119,6 +123,7 @@ const Wrapper = styled.footer`
     text-transform: uppercase;
     display: inline-block;
     transition: all 0.2s;
+
     :hover {
       color: var(--clr-primary-5);
       transform: rotate(-5deg) scale(1.3);
@@ -126,8 +131,15 @@ const Wrapper = styled.footer`
   }
 
   .copy {
-    border-top: 1px solid var(--clr-grey-10);
-    padding-top: 1rem;
-    margin-right: 5%;
+    margin: auto;
+    padding: 1rem;
+  }
+
+  p {
+    color: var(--clr-grey-10);
+  }
+
+  span {
+    color: var(--clr-primary-5);
   }
 `;

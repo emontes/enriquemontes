@@ -86,7 +86,7 @@ const Wrapper = styled.header`
     margin-bottom: 6rem;
     &--main {
       display: block;
-      font-size: 4rem;
+      font-size: 3.2rem;
       font-weight: 400;
       letter-spacing: 0.5rem;
       animation-name: moveInLeft;
@@ -99,7 +99,7 @@ const Wrapper = styled.header`
     &--sub {
       margin-top: 2rem;
       display: block;
-      font-size: 1rem;
+      font-size: 1.4rem;
       font-weight: 700;
       letter-spacing: 0.4rem;
       animation: moveInRight 1s ease-out;

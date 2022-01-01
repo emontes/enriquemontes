@@ -7,6 +7,7 @@ import { Link } from "gatsby";
 import Language from "./Language";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 import { debounce } from "../utilities/helpers";
+import device from "../assets/themes/device";
 
 const Navbar = ({ toggleSidebar }) => {
   const { t } = useTranslation();
@@ -36,8 +37,8 @@ const Navbar = ({ toggleSidebar }) => {
       <div className={visible ? "navbar" : "navbar-fixed"}>
         <div className="nav-center">
           <div className="nav-header">
-            <img src={logo} alt="web dev" />
-            <Language />
+            <img src={logo} alt="Enrique Montes" style={{ height: "3.5rem" }} />
+
             <button type="button" className="toggle-btn">
               <FaAlignRight onClick={toggleSidebar} />
             </button>
@@ -51,6 +52,7 @@ const Navbar = ({ toggleSidebar }) => {
                 </Link>
               );
             })}
+            <Language />
           </div>
         </div>
       </div>
@@ -66,7 +68,7 @@ const Wrapper = styled.div`
     top: 0;
     left: 0;
     width: 100%;
-    height: 5rem;
+    height: 5.8rem;
     display: flex;
     align-items: center;
     z-index: 200;
@@ -78,20 +80,20 @@ const Wrapper = styled.div`
     top: 0;
     left: 0;
     width: 100%;
-    height: 3.5rem;
+    height: 5.6rem;
     display: flex;
     align-items: center;
     z-index: 200;
     background: var(--clr-white);
     transition: var(--transition);
-    border-bottom: 0.1rem solid var(--clr-primary-5);
+    border-bottom: 0.116rem solid var(--clr-primary-5);
 
     box-shadow: var(--dark-shadow);
   }
 
   .nav-center {
     width: 90vw;
-    max-width: 1170px;
+    max-width: 117rem;
     margin: 0 auto;
   }
   .nav-header {
@@ -100,10 +102,10 @@ const Wrapper = styled.div`
     align-items: center;
   }
   .nav-header img {
-    margin-bottom: 0.375rem;
+    margin-bottom: 0.475rem;
   }
   .toggle-btn {
-    font-size: 2rem;
+    font-size: 2.32rem;
     background: transparent;
     border-color: transparent;
     color: var(--clr-primary-5);
@@ -116,7 +118,8 @@ const Wrapper = styled.div`
   .nav-links {
     display: none;
   }
-  @media screen and (min-width: 768px) {
+
+  @media screen and ${device.tablet} {
     .toggle-btn {
       display: none;
     }
@@ -126,13 +129,17 @@ const Wrapper = styled.div`
     }
 
     .nav-links a {
-      margin-right: 2rem;
       text-transform: capitalize;
       color: var(--clr-grey-1);
       font-weight: bold;
+      font-size: 1.2rem;
       letter-spacing: var(--spacing);
       transition: var(--transition);
-      padding: 0.5rem 0;
+      padding: 0.58rem 0;
+
+      :not(:last-child) {
+        margin-right: 2.32rem;
+      }
     }
     .nav-links a:hover {
       color: var(--clr-primary-5);
@@ -145,7 +152,7 @@ const Wrapper = styled.div`
     }
   }
 
-  @media screen and (min-width: 992px) {
+  @media screen and ${device.tablet} {
     background: transparent;
   }
 `;

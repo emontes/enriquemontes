@@ -12,15 +12,15 @@ const Resource = ({ title, url, used, image, recurso_tipo }) => {
         <div className="img-container">
           <GatsbyImage
             image={getImage(image.localFile)}
+            style={{ width: "8rem" }}
             alt={title}
-            className="img"
           />
         </div>
         <div className="footer">
           <div className="text">
-            <h3>{title}</h3>
+            <h4>{title}</h4>
             <p>
-              <Trans>Used since</Trans> {used}
+              <Trans>Since</Trans> {used}
             </p>
           </div>
         </div>
@@ -49,7 +49,8 @@ const Wrapper = styled.article`
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
-  height: 17rem;
+  margin-bottom: 5rem;
+  /* height: 17rem; */
 
   :hover .side--front {
     transform: rotateY(180deg);
@@ -57,12 +58,13 @@ const Wrapper = styled.article`
   :hover .side--back {
     transform: rotateY(0deg);
   }
+
   .side {
     transition: var(--transition);
     height: 17rem;
-    position: absolute;
+    /* position: absolute;
     top: 0;
-    left: 0;
+    left: 0; */
     width: 100%;
     backface-visibility: hidden;
     border-radius: 3px;
@@ -74,7 +76,7 @@ const Wrapper = styled.article`
     }
     &--back {
       transform: rotateY(180deg);
-
+      margin-top: -17rem;
       background-image: linear-gradient(
         to right bottom,
         var(--clr-primary-9),
@@ -84,7 +86,7 @@ const Wrapper = styled.article`
 
     /* FRONT SIDE STYLING */
     .img-container {
-      position: relative;
+      padding: 0.5rem;
       border-top-left-radius: 3px;
       border-top-right-radius: 3px;
     }
@@ -93,6 +95,8 @@ const Wrapper = styled.article`
       text-align: left;
       background: var(--clr-white);
       height: 8rem;
+      font-size: 1rem;
+      text-align: center;
     }
 
     /*  BACK SIDE STYLING */
@@ -123,23 +127,6 @@ const Wrapper = styled.article`
     .link:hover {
       background: var(--clr-white);
       color: var(--clr-primary-5);
-    }
-  }
-
-  @media screen and (min-width: 576px) {
-    h3 {
-      font-size: 0.8rem;
-    }
-    p {
-      display: unset;
-    }
-  }
-  @media screen and (min-width: 1200px) {
-    h3 {
-      font-size: 1.3rem;
-    }
-    p {
-      font-size: 0.8rem;
     }
   }
 `;

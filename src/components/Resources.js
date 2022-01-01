@@ -33,19 +33,14 @@ const Wrapper = styled.section`
   background: var(--clr-primary-9);
 
   .center {
-    width: 80vw;
-    margin: 3rem auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(5.5rem, 1fr));
-    grid-column-gap: 2rem;
-    grid-row-gap: 3rem;
-    @media screen and (min-width: 576px) {
-      grid-template-columns: repeat(auto-fill, minmax(7.04rem, 1fr));
+    padding: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    > * {
+      flex: 1;
     }
-    @media screen and (min-width: 1200px) {
-      width: 100%;
-      max-width: 1170px;
-      grid-template-columns: repeat(auto-fill, minmax(9.04rem, 1fr));
-    }
+    gap: 2rem;
   }
 `;

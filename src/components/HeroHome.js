@@ -3,6 +3,7 @@ import socialLinks from "../constants/social_links";
 import { StaticImage } from "gatsby-plugin-image";
 import { Link, Trans } from "gatsby-plugin-react-i18next";
 import styled from "styled-components";
+import device from "../assets/themes/device";
 
 const Hero = () => {
   return (
@@ -88,7 +89,7 @@ const Wrapper = styled.header`
     margin-top: 1.25rem;
   }
 
-  @media screen and (min-width: 992px) {
+  @media ${device.tablet} {
     ::before {
       content: "";
       position: absolute;
@@ -97,9 +98,6 @@ const Wrapper = styled.header`
       right: 0;
       bottom: 0;
       background: var(--clr-white);
-    }
-    h4 {
-      font-size: 0.85rem;
     }
 
     .hero-center {
@@ -138,16 +136,6 @@ const Wrapper = styled.header`
       display: block;
       grid-row: 1/1;
       grid-column: 7/-1;
-    }
-  }
-  @media screen and (min-width: 1170px) {
-    h4 {
-      font-size: 1rem;
-      line-height: 1;
-    }
-
-    .hero-info {
-      grid-column: 1 / span 8;
     }
   }
 `;

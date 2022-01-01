@@ -3,7 +3,7 @@ import services from "../constants/services";
 import { useTranslation } from "gatsby-plugin-react-i18next";
 import styled from "styled-components";
 import { StaticImage } from "gatsby-plugin-image";
-
+import device from "../assets/themes/device";
 const Services = () => {
   const { t } = useTranslation();
   return (
@@ -16,7 +16,7 @@ const Services = () => {
         className="bg-image"
       />
       <div className="hero-container">
-        <div className="section-center services-center">
+        <div className="services">
           {services.map((service) => {
             const { id, icon, title, text } = service;
             return (
@@ -56,6 +56,7 @@ const Wrapper = styled.section`
     left: 0;
     width: 100%;
     height: 100%;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -67,16 +68,37 @@ const Wrapper = styled.section`
     );
   }
 
+  .services {
+    padding: 0 2rem;
+
+    @media ${device.tablet} {
+      display: flex;
+      gap: 3rem;
+      justify-content: center;
+      align-items: stretch;
+      > * {
+        flex: 1;
+      }
+    }
+  }
   .service {
-    margin-bottom: 1.5rem;
+    :not(:last-child) {
+      margin-bottom: 2rem;
+    }
+
     background: var(--clr-white-transparency-8);
-    padding: 0.8rem 1.2rem 0.1rem;
+    padding: 1.8rem;
     border-radius: var(--radius);
     text-align: center;
     -webkit-transition: var(--transition);
     transition: var(--transition);
     color: var(--clr-grey-5);
     box-shadow: var(--light-shadow);
+    @media ${device.tablet} {
+      :not(:last-child) {
+        margin-bottom: 0rem;
+      }
+    }
     :hover {
       background: var(--clr-primary-5);
       color: var(--clr-primary-9);
@@ -95,51 +117,13 @@ const Wrapper = styled.section`
       color: var(--clr-grey-3);
       text-align: left;
 
-      font-size: 0.9rem;
+      font-size: 1.6rem;
     }
   }
   .service-icon {
-    font-size: 1.7rem;
+    font-size: 4rem;
     margin-bottom: 0;
     display: inline-block;
     color: var(--clr-primary-6);
-  }
-
-  h3 {
-    font-size: 1rem;
-  }
-
-  @media screen and (min-width: 676px) {
-    .service {
-      padding: 2.5rem 1.5rem;
-      p {
-        margin-top: 1.2rem;
-        letter-spacing: var(--spacing);
-      }
-    }
-    .service-icon {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-    .services-center {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      -webkit-column-gap: 2rem;
-      -moz-column-gap: 2rem;
-      column-gap: 2rem;
-    }
-  }
-  @media screen and (min-width: 992px) {
-    h3 {
-      font-size: 1.5rem;
-    }
-    .service-icon {
-      font-size: 3.5rem;
-    }
-    .service {
-      p {
-        font-size: 1.2rem;
-      }
-    }
   }
 `;

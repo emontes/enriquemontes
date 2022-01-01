@@ -165,7 +165,7 @@
                         </translations>
                     </concept_node>
                     <concept_node>
-                        <name>Front-end programmer</name>
+                        <name>Gatsbyjs Programmer</name>
                         <definition_loaded>false</definition_loaded>
                         <description/>
                         <comment/>
@@ -513,6 +513,35 @@
                         </translations>
                     </concept_node>
                     <concept_node>
+                        <name>Since</name>
+                        <definition_loaded>false</definition_loaded>
+                        <description/>
+                        <comment/>
+                        <default_text/>
+                        <translations>
+                            <translation>
+                                <language>de-DE</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>en-US</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>es-ES</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>he-IL</language>
+                                <approved>false</approved>
+                            </translation>
+                            <translation>
+                                <language>ru-RU</language>
+                                <approved>false</approved>
+                            </translation>
+                        </translations>
+                    </concept_node>
+                    <concept_node>
                         <name>Technological resources</name>
                         <definition_loaded>false</definition_loaded>
                         <description/>
@@ -601,35 +630,6 @@
                     </concept_node>
                     <concept_node>
                         <name>The Resources I Use (or have used)</name>
-                        <definition_loaded>false</definition_loaded>
-                        <description/>
-                        <comment/>
-                        <default_text/>
-                        <translations>
-                            <translation>
-                                <language>de-DE</language>
-                                <approved>false</approved>
-                            </translation>
-                            <translation>
-                                <language>en-US</language>
-                                <approved>false</approved>
-                            </translation>
-                            <translation>
-                                <language>es-ES</language>
-                                <approved>false</approved>
-                            </translation>
-                            <translation>
-                                <language>he-IL</language>
-                                <approved>false</approved>
-                            </translation>
-                            <translation>
-                                <language>ru-RU</language>
-                                <approved>false</approved>
-                            </translation>
-                        </translations>
-                    </concept_node>
-                    <concept_node>
-                        <name>Used since</name>
                         <definition_loaded>false</definition_loaded>
                         <description/>
                         <comment/>

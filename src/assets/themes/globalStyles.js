@@ -1,25 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-
-const size = {
-  mobileS: "320px",
-  mobileM: "375px",
-  mobileL: "425px",
-  tablet: "768px",
-  laptop: "1024px",
-  laptopL: "1440px",
-  desktop: "2560px",
-};
-
-export const device = {
-  mobileS: `(min-width: ${size.mobileS})`,
-  mobileM: `(min-width: ${size.mobileM})`,
-  mobileL: `(min-width: ${size.mobileL})`,
-  tablet: `(min-width: ${size.tablet})`,
-  laptop: `(min-width: ${size.laptop})`,
-  laptopL: `(min-width: ${size.laptopL})`,
-  desktop: `(min-width: ${size.desktop})`,
-  desktopL: `(min-width: ${size.desktop})`,
-};
+import device from "./device";
 
 const GlobalStyle = createGlobalStyle`
 /*
@@ -70,8 +50,8 @@ Variables
   --radius: 0.25rem;
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  --max-width: 1170px;
-  --fixed-width: 700px;
+  --max-width: 117rem;
+  --fixed-width: 70rem;
 }
 /*
 =============== 
@@ -87,29 +67,18 @@ Global Styles
   box-sizing: border-box;
 }
 html {
-    // This defines what 1rem is
-  font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+    /* This defines what 1rem is */
+  font-size: 62.5%; /* 1 rem = 10px; 10px/16px = 62.5% */
 
-  @media ${device.mobileL} {
-      font-size: 75%; /* 1 rem = 12px 12/16 = .75 */
-  }
-@media ${device.tablet} {
-    font-size: 87.5%; /* 1 rem = 14px 14/16 = .875 */
-  }
-  @media ${device.laptop} {
-      font-size: 100%; /* 1 rem = 16px 16/16 = 100% */
-  }
-  @media ${device.desktop} {
-      font-size: 112%; /* 1 rem = 18px 18/16 = 1.125% */
-  }
+  
 }
 body {
   font-family: var(--ff-secondary);
   background: var(--clr-white);
   color: var(--clr-grey-1);
   line-height: 1.5;
-  ${"" /* font-size: 0.875rem; */}
-  margin-top: 5rem;
+  font-size: 1.4rem;
+  margin-top: 5.8rem;
 }
 ul {
   list-style-type: none;
@@ -125,23 +94,23 @@ h4 {
   letter-spacing: var(--spacing);
 
   line-height: 1.25;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.2rem;
   font-family: var(--ff-primary);
 }
 h1 {
-  font-size: 3rem;
+  font-size: 4.8rem;
 }
 h2 {
-  font-size: 2rem;
+  font-size: 3.2rem;
 }
 h3 {
-  font-size: 1.25rem;
+  font-size: 2rem;
 }
 h4 {
-  font-size: 0.875rem;
+  font-size: 1.4rem;
 }
 p {
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.4rem;
   color: var(--clr-grey-3);
 }
 
@@ -151,13 +120,13 @@ p {
   text-transform: uppercase;
   background: var(--clr-primary-5);
   color: var(--clr-primary-9);
-  padding: 0.375rem 0.75rem;
+  padding: 0.6rem 1.2rem;
   letter-spacing: var(--spacing);
   display: inline-block;
   font-weight: 700;
   -webkit-transition: var(--transition);
   transition: var(--transition);
-  font-size: 0.875rem;
+  font-size: 1.4rem;
   border: 2px solid transparent;
   cursor: pointer;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
@@ -175,33 +144,33 @@ p {
 
 .center-btn {
   display: block;
-  width: 12rem;
+  width: 19.2rem;
   text-align: center;
   margin: 0 auto;
-  margin-top: 3rem;
+  margin-top: 4.8rem;
 }
 /* section */
 .section {
-  padding: 5rem 0;
+  padding: 8rem 0;
 }
 
 .section-center {
   width: 90vw;
   margin: 0 auto;
-  max-width: 1170px;
+  max-width: 117rem;
 }
 
 /* added during recording */
 .underline {
-  width: 5rem;
-  height: 0.25rem;
-  margin-bottom: 1.25rem;
+  width: 20%;
+  height: 0.2rem;
+  margin-bottom: 2rem;
   background: var(--clr-primary-8);
   margin-left: auto;
   margin-right: auto;
 }
 .section-title {
-  margin-bottom: 4rem;
+  margin-bottom: 6.4rem;
   text-align: center;
 }
 .bg-grey {
@@ -211,13 +180,13 @@ p {
 
 /* social links */
 .social-links {
-  margin-top: 2rem;
-  width: 15rem;
+  margin-top: 3.2rem;
+  width: 24rem;
   display: flex;
   justify-content: space-between;
 }
 .social-link {
-  font-size: 1.75rem;
+  font-size: 2.8rem;
   color: var(--clr-grey-1);
   transition: var(--transition);
 }
@@ -270,7 +239,7 @@ Sidebar
   position: absolute;
   right: 4.75%;
   top: 2.75%;
-  font-size: 2.5rem;
+  font-size: 4rem;
   background: transparent;
   border-color: transparent;
   color: var(--clr-red-dark);
@@ -357,12 +326,12 @@ Projects
 }
 .project {
   display: grid;
-  margin-bottom: 4rem;
+  margin-bottom: 6.4rem;
 }
 .project-img {
   border-top-left-radius: var(--radius);
   border-top-right-radius: var(--radius);
-  height: 19rem;
+  height: 30.4rem;
   z-index: 1;
 }
 .project-img::after {
@@ -381,20 +350,20 @@ Projects
 }
 .project-info {
   background: var(--clr-white);
-  padding: 1rem 2rem;
+  padding: 1.6rem 3.2rem;
   border-bottom-left-radius: var(--radius);
   border-bottom-right-radius: var(--radius);
 }
 .project-number {
   display: inline-block;
-  font-size: 1.25rem;
+  font-size: 2rem;
   color: var(--clr-primary-5);
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.2rem;
 }
 .project-slug h3 {
   font-weight: 500;
-  font-size: 1.25rem;
-  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  margin-bottom: 2.4rem;
   text-transform: uppercase;
   color: var(--clr-grey-1);
   transition: var(--transition);
@@ -403,31 +372,31 @@ Projects
   color: var(--clr-primary-5);
 }
 .project-desc {
-  word-spacing: 10px;
+  word-spacing: 1rem;
   color: var(--clr-grey-3);
 }
 .project-stack {
-  margin-bottom: 1rem;
+  margin-bottom: 1.6rem;
 }
 .project-stack span,
 .about-stack span {
   display: inline-block;
   background: var(--clr-grey-9);
   color: var(--clr-grey-5);
-  margin: 0.25rem;
-  padding: 0.25rem 0.5rem;
+  margin: 0.4rem;
+  padding: 0.4rem 0.8rem;
   border-radius: var(--radius);
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-size: 0.85rem;
+  font-size: 1.36rem;
 }
 .about-stack span {
-  margin-top: 0.5rem;
+  margin-top: 0.8rem;
 }
 .project-icon {
   color: var(--clr-primary-5);
-  font-size: 1.25rem;
-  margin-right: 0.5rem;
+  font-size: 2rem;
+  margin-right: 0.8rem;
   transition: var(--transition);
 }
 .project-icon:hover {
@@ -435,12 +404,12 @@ Projects
 }
 @media screen and ${device.mobileL} {
   .project-img {      
-    height: 19rem;
+    height: 30.4rem;
   }
 }
 @media screen and ${device.tablet} {
   .project-img {
-    height: 22rem;
+    height: 35.2rem;
   }
 }
 @media screen and ${device.laptop} {
@@ -452,7 +421,7 @@ Projects
     grid-column: 1 / span 8;
     /* grid-column-end: 8; */
     grid-row: 1 / 1;
-    height: 30rem;
+    height: 48rem;
     border-radius: var(--radius);
     box-shadow: var(--dark-shadow);
   }
@@ -497,7 +466,7 @@ Pages
 .error-page h1 {
   text-transform: uppercase;
   color: var(--clr-primary-1);
-  margin-bottom: 2rem;
+  margin-bottom: 3.2rem;
 }
 
 /*
@@ -506,7 +475,7 @@ Project Template Page
 ===============
 */
 .project-template-page {
-  padding-top: 3rem;
+  padding-top: 4.8rem;
   text-align: center;
 }
 .project-template-page h2 {
@@ -515,7 +484,7 @@ Project Template Page
 .project-template-page p {
   max-width: 35em;
   margin: 0 auto;
-  margin-top: 2rem;
+  margin-top: 3.2rem;
 }
 
 /*
@@ -526,7 +495,7 @@ Contact Page
 .contact-page {
   display: grid;
   place-items: center;
-  padding: 5rem 0;
+  padding: 8rem 0;
 }
 .contact-form {
   background: var(--clr-white);
@@ -535,24 +504,24 @@ Contact Page
   box-shadow: var(--light-shadow);
   transition: var(--transition);
   width: 90vw;
-  max-width: 35rem;
+  max-width: 56rem;
 }
 .contact-form:hover {
   box-shadow: var(--dark-shadow);
 }
 .contact-form h3 {
-  padding-top: 1.25rem;
+  padding-top: 2rem;
   color: var(--clr-grey-5);
 }
 .form-group {
-  padding: 1rem 1.5rem;
+  padding: 1.6rem 2.4rem;
 }
 .form-control {
   display: block;
   width: 100%;
-  padding: 0.75rem 1rem;
+  padding: 1.2rem 1.6rem;
   border: none;
-  margin-bottom: 1.25rem;
+  margin-bottom: 2rem;
   background: var(--clr-grey-10);
   border-radius: var(--radius);
   /* text-transform: uppercase; */
@@ -567,7 +536,7 @@ Contact Page
 .submit-btn {
   display: block;
   width: 100%;
-  padding: 1rem;
+  padding: 1.6rem;
   border-bottom-left-radius: var(--radius);
   border-bottom-right-radius: var(--radius);
   border-top-right-radius: 0;
@@ -583,7 +552,7 @@ Animation
   0% {
     opacity: 0;
     /* transform: translateX(-10rem) rotate(-60deg); */
-    transform: translateX(-10rem);
+    transform: translateX(-16rem);
   }
 
   60% {
@@ -591,7 +560,7 @@ Animation
   }
 
   80% {
-    transform: translateX(1rem);
+    transform: translateX(1.6rem);
   }
 
   100% {
@@ -603,11 +572,11 @@ Animation
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translateX(10rem);
+    transform: translateX(16rem);
   }
 
   80% {
-    transform: translateX(-1rem);
+    transform: translateX(-1.6rem);
   }
 
   100% {
@@ -619,11 +588,11 @@ Animation
 @keyframes moveInBottom {
   0% {
     opacity: 0;
-    transform: translateY(3rem);
+    transform: translateY(4.8rem);
   }
 
   80% {
-    transform: translateY(-1rem);
+    transform: translateY(-1.6rem);
   }
 
   100% {

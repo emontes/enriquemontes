@@ -25,7 +25,7 @@ const AboutPage = ({ data }) => {
       />
       <Hero
         bgColor="var(--clr-grey-10)"
-        main={t("Front-end programmer")}
+        main={t("Gatsbyjs Programmer")}
         sub={t("in cancun since")}
         btnLink="contact"
         image={data.image.childImageSharp}
