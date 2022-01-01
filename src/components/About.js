@@ -50,17 +50,19 @@ const Wrapper = styled.section`
   flex-direction: column;
   gap: 3rem;
 
-  @media ${device.tablet} {
+  @media ${device.laptopL} {
     flex-direction: row;
   }
 
   .article {
-    flex: 1;
+    flex: 2;
     padding: 2rem;
+    text-algin: justify;
   }
 
   .images {
     position: relative;
+    padding: 2rem;
     flex: 1;
     display: flex;
     justify-content: center;

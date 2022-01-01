@@ -42,9 +42,11 @@ const Wrapper = styled.section`
   margin-top: 5rem;
   margin-bottom: -9rem;
 
-  height: 90vh;
-  -webkit-clip-path: polygon(0 15vh, 100% 0, 100% 75vh, 0 100%);
-  clip-path: polygon(0 9vh, 100% 0, 100% 78vh, 0 100%);
+  @media ${device.laptop} {
+    height: 90vh;
+    -webkit-clip-path: polygon(0 15vh, 100% 0, 100% 75vh, 0 100%);
+    clip-path: polygon(0 9vh, 100% 0, 100% 78vh, 0 100%);
+  }
 
   .bg-image {
     height: 100vh;

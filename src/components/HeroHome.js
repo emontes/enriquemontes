@@ -56,6 +56,10 @@ const Wrapper = styled.header`
   position: relative;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  @media ${device.laptopL} {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+  }
 
   .hero-center {
     height: 100%;
@@ -89,7 +93,7 @@ const Wrapper = styled.header`
     margin-top: 1.25rem;
   }
 
-  @media ${device.tablet} {
+  @media ${device.laptop} {
     ::before {
       content: "";
       position: absolute;
