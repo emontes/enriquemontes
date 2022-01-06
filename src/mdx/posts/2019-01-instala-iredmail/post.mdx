@@ -1,0 +1,64 @@
+---
+title: Instalar iRedmail en Ubuntu
+slug: instalar-iredmail-ubuntu
+image: ./images/iRedMail.png
+date: 2019-01-09
+author: enrique montes
+category: servidores
+---
+
+La página de Documentación para el inicio de la instalación en la documentación oficial es: https://docs.iredmail.org/install.iredmail.on.debian.ubuntu.html
+
+De esta guía de instalación cuando llegamos al asunto del hostname en las nuevas versiones de ubuntu ya no está tan fácil como cambiar el /etc/hosts. Bueno está más fácil por que hay un comando hostnamectl entonces para cambiar el nombre usamos:
+
+```ubuntu
+sudo hostnamectl set-hostname new-name
+```
+
+Para el Upgrade de iRedAdmin-Pro está documentado en la siguiente página: https://docs.iredmail.org/iredadmin-pro.releases.html
+
+Y ya el proceso de Instalación está acá:
+https://docs.iredmail.org/migrate.or.upgrade.iredadmin.html
+
+iRedMail release notes and upgrade tutorials
+https://docs.iredmail.org/iredmail.releases.html
+
+Para Instalar el certificado ssl nos guiamos por estas:
+
+https://docs.iredmail.org/letsencrypt.html
+https://docs.iredmail.org/use.a.bought.ssl.certificate.html
+
+Para desbloquear direcciones bloqueadas por fail2ban:
+https://forum.iredmail.org/topic5695-iredmail-support-how-do-i-unban-ip-address-from-fail2ban.html
+
+Para verificar la salud del servidor o si está en listas negras una herramienta muy útil es:
+https://mxtoolbox.com
+
+Y para otra búsqueda con opción para remover de lista negra:
+https://www.spamhaus.org/lookup/
+
+Repecto a que gmail rebota los correos hemos probado lo siguiente:
+https://forum.iredmail.org/topic10569-iredmail-support-error-550571-when-trying-to-send-emails-to-gmailcom.html aquí básicamente dice que tiene que existir un PTR record, para que este recor exista en DigitalOcean basta con ponerle al droplet el mismo nombre del dominio Calificado (p.ej ejemplomail.com).
+
+Recalcular Espacio (Quota) de las Mailboxes:
+https://docs.iredmail.org/recalculate.mailbox.quota.html
+
+Recursos Utiles para el administrador de iRedMail:
+
+- iRedMail web site: https://www.iredmail.org/
+- Documentations: https://docs.iredmail.org/
+- Support Forum: https://forum.iredmail.org/
+- iRedMail upgrade tutorials: https://docs.iredmail.org/iredmail.releases.html
+- iRedAdmin upgrade tutorials: https://docs.iredmail.org/migrate.or.upgrade.iredadmin.html
+
+Para Helo command rejected: Host not found; esto pasa por ejemplo con @serviciobancomer.com y otros servidores generalmente de gobierno, la solución puede comentar la siguiente linea:
+
+```editor
+#reject_unknown_helo_hostname
+```
+
+en /etc/postfix/main.cf
+
+<Link to="/posts" className="btn center-btn">
+  all posts
+</Link>

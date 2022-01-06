@@ -74,16 +74,16 @@ html {
       font-size: 75%; /* 1 rem = 12px 12/16 = .75 */
   }
   @media ${device.tablet} {
-    font-size: 87.5%; /* 1 rem = 14px 14/16 = .875 */
+    font-size: 81.25%; /* 1 rem = 13px 13/16 = .8125 */
   }
   @media ${device.laptop} {
-      font-size: 100%; /* 1 rem = 16px 16/16 = 100% */
+      font-size: 87.5%; /* 1 rem = 14px 14/16 = .875% */
   }
   @media ${device.desktop} {
-      font-size: 112%; /* 1 rem = 18px 18/16 = 1.125% */
+      font-size: 93.75%; /* 1 rem = 15px 15/16 = .9375% */
   }
   @media ${device.desktopL} {
-      font-size: 137.5%; /* 1 rem = 22px 22/16 = 1.375% */
+      font-size: 100%; /* 1 rem = 16px 16/16 = 1% */
   }
 
   

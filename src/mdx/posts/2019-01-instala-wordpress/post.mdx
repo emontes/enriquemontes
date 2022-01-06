@@ -1,0 +1,78 @@
+---
+title: Instalar WordPress en Ubuntu
+slug: instalar-wordpress-en-ubuntu
+image: ./images/WordPress.png
+date: 2019-01-10
+author: enrique montes
+category: cms
+---
+
+Página de Referencia:
+https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-lemp-on-ubuntu-18-04
+
+o esta:
+https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-lamp-on-ubuntu-16-04
+
+o esta: https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-nginx-on-ubuntu-14-04
+
+Vamos a iniciar el proceso de instalar WordPress, lo primero que necesitamos es crear la base de Datos, entonces ingresamos a MySql tecleando:
+
+`mysql -u root -p`
+
+Una vez dentro de MySql el comando para crear la base de datos es:
+
+```mysql
+CREATE DATABASE wordpress DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+```
+
+Ahora necesitamos crear una cuenta de usuario, asignarle un password y concederle acceso a la base de datos que creamos, podemos hacerlo escribiendo el siguiente comando. Procura elegir un password fuerte para tu usuario.
+
+```mysql
+GRANT ALL ON wordpress.\* TO 'wordpressuser'@'localhost' IDENTIFIED BY 'password';
+```
+
+Ahora que tienes la base de datos y la cuenta de usuario, hechas específicamente para WordPress, necesitamos hacer un flush a los privilegios para que de esta manera la instancia actual de MySQL sepa acerca de los cambios que realizamos:
+
+```MySQL
+FLUSH PRIVILEGES;
+```
+
+Sal de MySQL tecleando:
+
+```mysql
+EXIT;
+```
+
+## Descargando WordPress
+
+Si todo va bien vamos a Descargar WordPress en el directorio donde pongas tus sitios comúnmente.
+
+`curl -LO https://wordpress.org/latest.tar.gz`
+
+Y luego a extraer el archivo descargado con:
+
+`tar xzvf latest.tar.gz`
+
+Esto va a extraer todo en un directorio de nombre wordpress, entonces hay que renombrarlo al nombre que necesites (ejemplo.com).
+
+`mv wordpress ejemplo.com`
+
+Luego hay que cambiar el propietario de este directorio para que wordpress pueda tomar control
+
+`chown -R www-data:www-data ejemplo.com`
+
+Para Hacer los symbolics links en nginx y recargar el servidor:
+
+```ubuntu
+ln -s /etc/nginx/sites-available/ejemplo.com /etc/nginx/sites-enabled
+nginx -t
+service nginx restart
+```
+
+Si ya configuraste tu servidor para ir al directorio en cuestión puedes ya ejecutar la legendaria instalación en 5 minutos de WordPress.
+
+Para instalar el Let's Encript utilizamos la siguiente liga: https://www.digitalocean.com/community/tutorials/como-asegurar-nginx-con-let-s-encrypt-en-ubuntu-18-04-es
+
+<Link to="/posts" className="btn center-btn">
+  all posts
+</Link>

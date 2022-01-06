@@ -1,0 +1,119 @@
+---
+title: Instalar Servidor Nginx en Ubuntu
+slug: instalar-servidor-nginx-en-ubuntu
+image: ./images/nginx.png
+date: 2019-02-17
+author: enrique montes
+category: servidores
+---
+
+Como Sabemos lo primero es actualizar el apt-get entonces:
+
+```ubuntu
+apt-get update
+```
+
+Después instalamos Nginx
+
+```ubuntu
+apt-get install nginx
+```
+
+Para verificar que los procesos estén corriendo:
+
+```ubuntu
+ps aux | grep ngnix
+```
+
+Cuando reconstruimos un servidor y manda error HOST IDENTIFICATION HAS CHANGED ponemos
+
+```ubuntu
+ssh-keygen -R ip-del-servidor
+```
+
+### Instalación Personalizada
+
+La instalación desde paquetes es un poco limitada por que no podemos agregar nuestros propios paquetes, entonces vamos a intentar una instalación personalizada desde las fuentes de ngnix.
+
+Primero hay que ir a nginx.org y navegar a la liga de Download. De ahí copiamos la dirección de la última versión Estable (o la que nos guste) y en el servidor Ubuntu ponemos:
+
+```ubuntu
+wget http://nginx.org/download/nginx-1.15.8.tar.gz <-- La liga de la última versión
+tar -zxvf nginx-1.15.8.tar.gz
+cd nginx-1.15.8
+```
+
+El siguiente paso es configurar nuestra instalación, si ponemos _./configure_ nos va a indicar que no tenemos un compilador C. Entonces tecleamos:
+
+```ubuntu
+apt-get install build-essential
+```
+
+Con esto ya va a funcionar el configure pero nos va indicar que nos faltan algunos módulos, hay que añadirlos.
+
+```ubuntu
+apt-get install libpcre3 libpcre3-dev zlib1g zlib1g-dev libssl-dev
+./configure
+```
+
+Podemos ver todas las banderas de configuración tecleando
+
+```ubuntu
+ubuntu./configure –help
+```
+
+o para más completo desde la página http://nginx.org/en/docs/configure.html (Building nginx from Sources), entonces tecleamos:
+
+```ubuntu
+./configure --sbin-path=/usr/bin/nginx --conf-path=/etc/nginx/nginx.conf --error-log-path=/var/log/nginx/error.log --http-log-path=/var/log/nginx/access.log --with-pcre --pid-path=/var/run/nginx.pid --with-http_ssl_module
+
+make
+make install
+```
+
+Para verificar que todo haya quedado como se configuró:
+
+```ubuntu
+ls -l /etc/nginx
+```
+
+Y deben de aparecernos los archivos de configuración
+
+```ubuntu
+nginx -V
+```
+
+y nos aparece la versión y la configuración dada.
+
+### Agregando un Servicio Nginx
+
+Después de haber instalado Nginx, nuestro siguiente paso será instalar un servicio, vamos a instalar systemd (https://www.freedesktop.org/wiki/Software/systemd/), por cierto este servicio está disponible solamente desde la versión 15.0.4 de Ubuntu y CentOS 7.00.
+Para agregarlo vamos tener que copiar un pequeño script que podemos obtener de la siguiente página: https://www.nginx.com/resources/wiki/start/topics/examples/systemd.
+Antes de modificar hay que detener el servicio de apache con lo siguiente:
+
+```ubuntu
+nginx -s stop
+```
+
+En la parte de [Service] hay que hacer las siguientes modificaciones
+
+```[Service]
+Type=forking PIDFile=/var/run/nginx.pid
+ExecStartPre=/usr/bin/nginx -t
+ExecStart=/usr/bin/nginx
+ExecReload=/usr/bin/nginx -s reload
+ExecStop=/bin/kill -s QUIT $MAINPID\
+PrivateTmp=true
+```
+
+Ahora sí podemos iniciar nginx con Systemd tecleando:
+
+```ubuntu
+sytemctl start nginx
+```
+
+Ahora para habilitar que nginx se ejecute despues de reiniciar la computadora tecleamos lo siguiente:
+
+```ubuntu
+systemctl enable nginx
+```

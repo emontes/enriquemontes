@@ -101,6 +101,12 @@ module.exports = {
           },
           keySeparator: false,
           nsSeparator: false,
+          pages: [
+            {
+              matchPath: "/posts/:title?",
+              languages: ["en"],
+            },
+          ],
         },
       },
     },
@@ -166,6 +172,19 @@ module.exports = {
           },
         ],
       },
+    }, //source-strapi
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/src/mdx`,
+      },
     },
-  ],
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        gatsbyRemarkPlugins: [{ resolve: "gatsby-remark-images" }],
+      },
+    }, //   resolve: `gatsby-source-filesystem`,
+  ], //plugins
 };

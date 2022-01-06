@@ -3,13 +3,14 @@ import Title from "../components/Title";
 import styled from "styled-components";
 import { StaticImage } from "gatsby-plugin-image";
 import device from "../assets/themes/device";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 
 const About = ({ title, info, stack }) => {
   return (
     <Wrapper>
       <article className="article">
         <Title title={title} />
-        <p>{info}</p>
+        <p className="display-linebreak">{info}</p>
         <div className="about-stack">
           {stack.map((item) => {
             return <span key={item.id}>{item.title}</span>;
@@ -54,6 +55,11 @@ const Wrapper = styled.section`
     flex-direction: row;
   }
 
+  .display-linebreak {
+    white-space: pre-line;
+    line-height: 1.8rem;
+    text-align: justify;
+  }
   .article {
     flex: 2;
     padding: 2rem;

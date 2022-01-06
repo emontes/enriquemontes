@@ -4,6 +4,7 @@ import { Link, Trans } from "gatsby-plugin-react-i18next";
 import styled from "styled-components";
 import { StaticImage } from "gatsby-plugin-image";
 import device from "../assets/themes/device";
+import links from "../constants/links-footer";
 
 const Footer = () => {
   return (
@@ -28,22 +29,15 @@ const Footer = () => {
         <div className="navigation">
           <div className="underline" />
           <ul class="footer__list">
-            <li class="footer__item">
-              <Link to="/about" className="link">
-                <Trans>about</Trans>
-              </Link>
-            </li>
-            <li class="footer__item">
-              <Link to="/contact" className="link">
-                <Trans>Contact</Trans>
-              </Link>
-            </li>
-
-            <li class="footer__item">
-              <Link to="/privacy" className="link">
-                <Trans>Privacy policy</Trans>
-              </Link>
-            </li>
+            {links.map((item) => {
+              return (
+                <li class="footer__item" key={item.link}>
+                  <Link to={item.url} className="link">
+                    <Trans>{item.text}</Trans>
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </div>
 

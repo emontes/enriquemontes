@@ -1,0 +1,16 @@
+---
+title: Algunos Tips MySql
+slug: algunos-tips-mysql
+image: ./images/mysql.png
+date: 2019-01-30
+author: enrique montes
+category: datos
+---
+
+Quitar el only_full_group del my_sql
+
+```mysql
+SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));
+```
+
+En las nuevas versiones de mySql muchos querys anidados no funcionan con el only_full_group activo;

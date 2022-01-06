@@ -1,0 +1,39 @@
+import React from "react";
+import Layout from "../components/Layout";
+import { graphql } from "gatsby";
+import Posts from "../components/Posts";
+const PostsPage = ({ data }) => {
+  const {
+    allMdx: { nodes: posts },
+  } = data;
+  return (
+    <Layout>
+      <Posts posts={posts} title="all posts" />
+    </Layout>
+  );
+};
+
+export default PostsPage;
+
+export const query = graphql`
+  {
+    allMdx(sort: { fields: frontmatter___date, order: DESC }) {
+      nodes {
+        id
+        frontmatter {
+          title
+          author
+          category
+          slug
+          date(formatString: "MMMM, Do YYYY")
+          image {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+        }
+        excerpt
+      }
+    }
+  }
+`;
