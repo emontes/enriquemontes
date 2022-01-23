@@ -15,7 +15,6 @@ const CategoryTemplate = (props) => {
   } = props;
   return (
     <Layout>
-      <Hero />
       <Posts posts={posts} title={`category / ${category}`} />
     </Layout>
   );

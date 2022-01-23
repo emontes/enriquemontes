@@ -1,0 +1,63 @@
+---
+title: Conceder Acceso Remoto a MySql en Ubuntu
+slug: conceder-accesso-remoto-a-mysql-en-ubuntu
+image: remote-access.jpeg
+date: 2019-03-12
+category: datos
+categories:
+  - "mysql"
+  - "ubuntu"
+---
+
+Muchas veces es necesario conceder acceso remoto a nuestra base de datos MySql, aunque esto conlleva ciertos riesgos resulta super útil sobre todo para compatibilizar los datos del servidor de desarrollo con el servidor de producción.
+
+Primero hay que ingresar a mysql:
+
+```
+mysql -p
+```
+
+Una vez en mysql ejecutar el siguiente comando:
+
+```mysql
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'password';
+
+FLUSH PRIVILEGES;
+```
+
+Nota: Es conveniente agregar una dirección ip anterior al comodín % para limitar un poco el rango de usuarios que pueden acceder por ejemplo: '211%'.
+
+Lo siguiente será comprobar el Firewall (UFW = Uncomplicated Firewall)
+
+```
+ufw status
+```
+
+Si no aparece el puerto 3306 (o el que se use para mysql) hay que agregar la regla para mysql.
+
+```
+ufw allow mysql
+service ufw restart
+```
+
+Verificar MySQL config
+
+Este puede ser /etc/mysql/mysql.conf.d/mysqld.conf
+
+Cambiar:
+
+```
+bind-address = 127.0.0.1
+```
+
+Por:
+
+```
+#bind-address = 127.0.0.1
+```
+
+Reiniciar MySQL
+
+```
+service mysql restart
+```

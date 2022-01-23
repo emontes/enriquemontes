@@ -1,0 +1,62 @@
+---
+title: "Algunos tips para liberar espacio en Linux"
+slug: "tips-para-liberar-espacio-en-linux"
+image: "./Espacio-disco-Linux.jpeg"
+date: "2020-06-30"
+category: "linux"
+---
+
+Eventualmente uno se va quedando sin espacio en disco en el servidor Linux. Lo primero que hay que hacer para saber el espacio que tenemos es usar el siguiente comando:
+
+```
+df -h
+```
+
+Esto nos dirá el espacio utilizado y libre en las diferentes particiones, cuando usamos el comando df nos da la longitud en bytes, lo cual no es muy legible para el ser humano normal. Por eso el parámetro -h nos despliega un formato más legible (en Kb, Megas o Gygas).
+
+Ahora lo siguiente es saber cuáles son los directorios que están ocupando más espacio en disco, para ello ocupamos el siguiente comando:
+
+```
+du -a | sort -n -r | head -n 20
+```
+
+Éste nos dará los 20 directorios u archivos más grandes. Ojo, si utilizas este comando en el directorio raíz puede ser muy tardado. El comando funciona así:
+
+- du - comando: Estima el espacio que usan los archivos
+- a: despliega archivos y directorios
+- sort - comando: Ordena lineas de archivos de texto
+- \-n: compara de acuerdo al valor numérico que se dé
+- \-r: Orden inverso (Reverse) del resulltado de las comparaciones
+- head: Despliega la primera parte de los archivos
+- \-n: Imprime las primeras 'n' lineaas. (En este caso las primeras 20 lineas).
+
+Quizás quieras un formato más legible para el ser humano, entonces puedes utilizar:
+
+```
+du -hs * | sort -rh | head -20
+```
+
+### /var/mail/username
+
+Es probable que con el análisis que realices con el comando du te encuentres con que en el directorio de mail tienes mucho espacio ocupado. Sin embargo quizás no sea conveniente eliminar el archivo del buzón de algún usuario, por eso es mejor únicamente vaciarlo con el siguiente comando:
+
+```
+> /var/mail/username
+```
+
+### /usr/src
+
+Otro directorio que puede estar ocupando mucho espacio es este, donde se guardan las fuentes de los paquetes utilizados por aplicaciones como apt-get. El problema es que a veces se quedan las versiones viejas que ya no se usan y ocupan espacio. Para borrar estas versiones puedes utilizar:
+
+```
+sudo apt-get autoremove
+```
+
+Si este no funciona por sí mismo puedes utilizar :
+
+```
+apt-get clean
+apt-get autoclean
+```
+
+Y vuelves a intentar el autoremove, con eso deben eliminarse las versiones viejas que te quitan espacio en disco.

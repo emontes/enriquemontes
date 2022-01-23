@@ -5,7 +5,7 @@ const Code = ({ children }) => {
       style={{
         background: "var(--clr-grey-10)",
         color: "var(--clr-grey-5)",
-        padding: "1rem",
+        padding: ".3rem",
         borderRadius: "var(--radius)",
       }}
     >

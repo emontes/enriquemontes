@@ -5,7 +5,10 @@ import styled from "styled-components";
 
 const PrismWrapper = (props) => {
   const className = props.children.props.className;
-  const language = className.split("-")[1];
+  var language = "";
+  if (className) {
+    var language = className.split("-")[1];
+  }
 
   return (
     <Highlight

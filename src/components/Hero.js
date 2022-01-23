@@ -1,15 +1,15 @@
-import React from "react";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import styled from "styled-components";
-import { Trans, Link } from "gatsby-plugin-react-i18next";
+import React from 'react'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import styled from 'styled-components'
+import { Trans, Link } from 'gatsby-plugin-react-i18next'
 
 const AboutHeader = ({ bgColor, image, main, sub, btnLink, btnText }) => {
   return (
-    <Wrapper style={{ backgroundColor: `${bgColor || "var(--clr-white)"}` }}>
+    <Wrapper style={{ backgroundColor: `${bgColor || 'var(--clr-white)'}` }}>
       <div className="hero">
         <GatsbyImage
           image={getImage(image)}
-          alt="Agente de Seguros"
+          alt="Programador Gatsby"
           className="hero-img"
           placeholder="tracedSVG"
           layout="constrained"
@@ -18,26 +18,26 @@ const AboutHeader = ({ bgColor, image, main, sub, btnLink, btnText }) => {
           <div className="header__text-box">
             <h1 className="heading-primary">
               <span className="heading-primary--main">
-                {main || "Programador Front-end"}
+                {main || 'Programador Front-end'}
               </span>
               <span className="heading-primary--sub">
-                {sub || "en Cancún desde 2002, programando desde 1984"}
+                {sub || 'en Cancún desde 2002, programando desde 1984'}
               </span>
             </h1>
 
             {btnLink && (
               <Link to={`/${btnLink}`} className="btn btn--white btn--animated">
-                <Trans>{btnText || "contact"}</Trans>
+                <Trans>{btnText || 'contact'}</Trans>
               </Link>
             )}
           </div>
         </div>
       </div>
     </Wrapper>
-  );
-};
+  )
+}
 
-export default AboutHeader;
+export default AboutHeader
 
 const Wrapper = styled.header`
   .hero-img {
@@ -105,4 +105,4 @@ const Wrapper = styled.header`
       animation: moveInRight 1s ease-out;
     }
   }
-`;
+`

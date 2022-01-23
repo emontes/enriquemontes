@@ -2,7 +2,7 @@ import React from "react";
 import Layout from "../components/Layout";
 import styled from "styled-components";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-// import Banner from "../components/Banner";
+import Banner from "../components/Banner";
 import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 const PostTemplate = ({ data }) => {
@@ -32,7 +32,9 @@ const PostTemplate = ({ data }) => {
           <MDXRenderer embeddedImages={embeddedImages}>{body}</MDXRenderer>
         </article>
         {/* banner */}
-        <article>{/* <Banner /> */}</article>
+        <article>
+          <Banner />
+        </article>
       </Wrapper>
     </Layout>
   );

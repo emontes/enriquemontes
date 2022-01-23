@@ -1,0 +1,54 @@
+---
+title: Modificar Upload Size en Php-Nginx
+slug: modificar-upload-size-en-php-nginx
+image: ../2019-02-instalar-nginx/images/nginx.png
+date: 2019-02-27
+category: servidores
+author: enriquemontes
+categories:
+  - "nginx"
+  - "php"
+---
+
+Hay algunas ocasiones en que se necesita subir archivos de gran tamaño, por ejemplo cuando se está migrando un sitio Word Press con All In One Migration.
+
+Para lograr temporalmente que se pueda hacer esto en NGINX modificamos los siguientes archivos:
+
+#### Cambios en php.ini
+
+Editar
+
+```ubuntu
+/etc/php/fpm/php.ini
+```
+
+Modificar
+
+```editor
+upload_max_filesize = 100M
+post_max_size = 100M
+```
+
+Notas:
+
+1. Técnicamente, post_max_size debería siempre ser más grande que upload_max_fileseze pero para números grandes como 100M puedes ponerlos igual.
+2. Hay otra variable max_input_time que puede limitar el tamaño de un upload.
+
+Para saber más sobre las cargas de archivo puedes visitar: [http://www.radinks.com/upload/config.php](http://www.radinks.com/upload/config.php)
+
+#### Cambios en Nginx config
+
+Agregar la siguiente linea al bloque http{..\] en nginx config
+
+```editor
+http { #... client_max_body_size 100m; #... }
+```
+
+Nota: para archivos demasiado grandes, quizás necesites cambiar el valor de client_body_timeout . El Default es 60s.
+
+#### Recargar PHP-FPM y Nginx
+
+```ubuntu
+service php7.2-fpm reload
+service nginx reload
+```
