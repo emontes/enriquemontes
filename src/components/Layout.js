@@ -1,17 +1,17 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 
-import Navbar from "./Navbar";
-import Sidebar from "./Sidebar";
+import Navbar from './Navbar'
+import Sidebar from './Sidebar'
 
-import Footer from "./Footer";
+import Footer from './Footer'
 // import "../assets/css/main.css";
-import GlobalStyles from "../assets/themes/globalStyles";
+import GlobalStyles from '../assets/themes/globalStyles'
 
 const Layout = ({ children }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
   const toggleSidebar = () => {
-    setIsOpen(!isOpen);
-  };
+    setIsOpen(!isOpen)
+  }
 
   return (
     <>
@@ -24,7 +24,7 @@ const Layout = ({ children }) => {
 
       <Footer />
     </>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout
