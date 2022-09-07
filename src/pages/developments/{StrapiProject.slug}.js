@@ -1,12 +1,12 @@
-import React from "react";
-import { graphql } from "gatsby";
-import Seo from "../../components/Seo";
-import Layout from "../../components/Layout";
+import React from 'react'
+import { graphql } from 'gatsby'
+import Seo from '../../components/Seo'
+import Layout from '../../components/Layout'
 
 const ProjectTemplate = ({ pageContext: { title }, data }) => {
   if (!data.strapiProject) {
-    console.log("----> No hay data.strapiProject");
-    return null;
+    console.log('----> No hay data.strapiProject')
+    return null
   }
   return (
     <Layout>
@@ -19,11 +19,13 @@ const ProjectTemplate = ({ pageContext: { title }, data }) => {
         <h2>{title}</h2>
         <p>{data.strapiProject.description}</p>
         <br />
-        <img src={data.strapiProject.image.localFile.publicURL} alt={title} />
+        <a href={data.strapiProject.url}>
+          <img src={data.strapiProject.image.localFile.publicURL} alt={title} />
+        </a>
       </main>
     </Layout>
-  );
-};
+  )
+}
 
 export const query = graphql`
   query getSingleProject($slug: String, $language: String!) {
@@ -40,6 +42,7 @@ export const query = graphql`
     strapiProject(slug: { eq: $slug }, locale: { eq: $language }) {
       description
       title
+      url
       image {
         localFile {
           publicURL
@@ -47,5 +50,5 @@ export const query = graphql`
       }
     }
   }
-`;
-export default ProjectTemplate;
+`
+export default ProjectTemplate
