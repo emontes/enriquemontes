@@ -129,7 +129,23 @@ p {
   margin-bottom: 1.4rem;
   color: var(--clr-grey-3);
 }
+code {
+  color: rgb(131, 148, 150);
+  font-size: 13px;  
+  border-radius: 3px;
+  word-wrap: break-word;
+  background-color: rgb(0, 43, 54);
+}
 
+blockquote {
+    margin-top: 41px;
+    margin-bottom: 34px;
+    font-size: 16px;
+    font-weight: 400;
+    border-left: 5px solid var(--clr-grey-8);
+    font-style: italic;
+    padding: 10px 20px;
+}
 /*  global classes */
 
 .btn {

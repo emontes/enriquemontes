@@ -1,20 +1,34 @@
-import React from "react";
-import Layout from "../components/Layout";
-import styled from "styled-components";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import Banner from "../components/Banner";
-import { graphql } from "gatsby";
-import { MDXRenderer } from "gatsby-plugin-mdx";
+import React from 'react'
+import Layout from '../components/Layout'
+import styled from 'styled-components'
+import { GatsbyImage, getImage, getSrc } from 'gatsby-plugin-image'
+import Banner from '../components/Banner'
+import { graphql } from 'gatsby'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
+import Seo from '../components/Seo'
 const PostTemplate = ({ data }) => {
+  console.log({ data })
   const {
     mdx: {
-      frontmatter: { title, category, image, date, embeddedImages },
+      frontmatter: {
+        title,
+        description,
+        category,
+        image,
+        date,
+        embeddedImages,
+      },
       body,
     },
-  } = data;
+  } = data
 
   return (
     <Layout>
+      <Seo
+        title={title}
+        description={description ? description : 'Blog Post'}
+        image={getSrc(image)}
+      />
       <Wrapper>
         {/* post info */}
         <article>
@@ -37,8 +51,8 @@ const PostTemplate = ({ data }) => {
         </article>
       </Wrapper>
     </Layout>
-  );
-};
+  )
+}
 
 const Wrapper = styled.section`
   width: 85vw;
@@ -89,9 +103,9 @@ const Wrapper = styled.section`
       column-gap: 4rem;
     }
   }
-`;
+`
 
-export default PostTemplate;
+export default PostTemplate
 
 export const query = graphql`
   query GetSinglePost($slug: String) {
@@ -101,6 +115,7 @@ export const query = graphql`
         date(formatString: "MMMM Do, YYYY")
         slug
         title
+        description
 
         # embeddedImages {
         #   childImageSharp {
@@ -116,4 +131,4 @@ export const query = graphql`
       body
     }
   }
-`;
+`
