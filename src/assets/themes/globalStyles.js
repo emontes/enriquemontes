@@ -1,5 +1,5 @@
-import { createGlobalStyle } from "styled-components";
-import device from "./device";
+import { createGlobalStyle } from 'styled-components'
+import device from './device'
 
 const GlobalStyle = createGlobalStyle`
 /*
@@ -137,15 +137,7 @@ code {
   background-color: rgb(0, 43, 54);
 }
 
-blockquote {
-    margin-top: 41px;
-    margin-bottom: 34px;
-    font-size: 16px;
-    font-weight: 400;
-    border-left: 5px solid var(--clr-grey-8);
-    font-style: italic;
-    padding: 10px 20px;
-}
+
 /*  global classes */
 
 .btn {
@@ -686,6 +678,6 @@ Banner Component
   transform: translateY(-10%);
 }
 
-`;
+`
 
-export default GlobalStyle;
+export default GlobalStyle
