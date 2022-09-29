@@ -60,7 +60,7 @@ module.exports = {
             description: `פיתוח אתרים סופר מהירים עם Gatsby.js`,
           },
         ],
-        ocalize: [
+        localize: [
           {
             start_url: `/ru/`,
             lang: `ru`,
@@ -103,8 +103,8 @@ module.exports = {
           nsSeparator: false,
           pages: [
             {
-              matchPath: "/posts/:title?",
-              languages: ["en"],
+              matchPath: '/posts/:title?',
+              languages: ['en'],
             },
           ],
         },
@@ -131,7 +131,7 @@ module.exports = {
         ],
         singleTypes: [
           {
-            name: "about",
+            name: 'about',
             api: {
               qs: {
                 _locale: `en`,
@@ -139,7 +139,7 @@ module.exports = {
             },
           },
           {
-            name: "about",
+            name: 'about',
             api: {
               qs: {
                 _locale: `es`,
@@ -147,7 +147,7 @@ module.exports = {
             },
           },
           {
-            name: "about",
+            name: 'about',
             api: {
               qs: {
                 _locale: `de`,
@@ -155,7 +155,7 @@ module.exports = {
             },
           },
           {
-            name: "about",
+            name: 'about',
             api: {
               qs: {
                 _locale: `he`,
@@ -163,7 +163,7 @@ module.exports = {
             },
           },
           {
-            name: "about",
+            name: 'about',
             api: {
               qs: {
                 _locale: `ru`,
@@ -183,8 +183,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
-        gatsbyRemarkPlugins: [{ resolve: "gatsby-remark-images" }],
+        gatsbyRemarkPlugins: [{ resolve: 'gatsby-remark-images' }],
       },
     }, //   resolve: `gatsby-source-filesystem`,
   ], //plugins
-};
+}

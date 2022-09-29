@@ -1,12 +1,12 @@
-import React from "react";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import { FaRegClock } from "react-icons/fa";
-import { IoMdArrowRoundForward } from "react-icons/io";
-import { Link } from "gatsby";
-import styled from "styled-components";
+import React from 'react'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { FaRegClock } from 'react-icons/fa'
+import { IoMdArrowRoundForward } from 'react-icons/io'
+import { Link } from 'gatsby'
+import styled from 'styled-components'
 
 const Post = ({ excerpt, frontmatter }) => {
-  const { title, image, slug, date, category } = frontmatter;
+  const { title, image, slug, date, category } = frontmatter
   return (
     <Wrapper>
       <GatsbyImage image={getImage(image)} alt={title} className="img" />
@@ -15,7 +15,7 @@ const Post = ({ excerpt, frontmatter }) => {
         <h3>{title}</h3>
         <div className="undeline"></div>
         <p>{excerpt}</p>
-        <Link to={`/posts/${slug}`} classname="link">
+        <Link to={`/posts/${slug}`} className="link">
           Continue reading <IoMdArrowRoundForward />
         </Link>
         <footer>
@@ -26,8 +26,8 @@ const Post = ({ excerpt, frontmatter }) => {
         </footer>
       </div>
     </Wrapper>
-  );
-};
+  )
+}
 
 const Wrapper = styled.article`
   margin-bottom: 3rem;
@@ -129,6 +129,6 @@ const Wrapper = styled.article`
       }
     }
   }
-`;
+`
 
-export default Post;
+export default Post
